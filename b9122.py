@@ -69,12 +69,14 @@ def mark_attendance(class_code=None, recipient=None):
     try:
         link = "mailto:%s?subject=Attendance&body=%s" % (recipient, body)
         subprocess.check_output("open '%s'" % link , shell=True)
-    except:  # I don't know the exception on Windows!
-            print("Please send an email with subject 'Attendance' and " +
-                  "this line in the body to %s@columbia.edu:" % recipient)
-            print("-" * 10)
-            print(body)
-            print("-" * 10)                                
+    except:  # TODO fix this
+        pass
+        
+    print("If it failed, please send an email with subject 'Attendance' and " +
+          "this line in the body to %s@columbia.edu:" % recipient)
+    print("-" * 10)
+    print(body)
+    print("-" * 10)                                
 
 
 mark_attendance()
