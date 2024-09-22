@@ -9,6 +9,9 @@ import subprocess
 import sys
 
 
+RECIPIENT = "mm3509"
+
+
 def get_uni():
     fp = ".uni.txt"
     if not os.path.exists(fp):
@@ -43,41 +46,42 @@ def get_time():
 
 
 
-def mark_attendance(class_code=None, recipient=None):
+def generate_hashcode(fields):
+    sha1 = hashlib.sha1()
+    sha1.update("".join(fields).encode("ascii"))
+    return sha1.hexdigest()
+    
+
+def mark_attendance(class_code=None):
     uni = get_uni()
-    ip = get_ip()
-    mac = str(uuid.getnode())
+    ip_address = get_ip()
+    mac_address = str(uuid.getnode())
     salt = get_salt()
-    t = get_time()
+    timestamp = get_time()
 
     if not class_code:
         class_code = input("Please enter the classroom code: ")
 
-    if not recipient:
-        recipient = input("Please enter the UNI of the recipient: ")
-
-    if not recipient.endswith("columbia.edu"):
-        recipient += "@columbia.edu"
-
-    sha1 = hashlib.sha1()
-    specs = [uni, ip, mac, salt, t]
-    sha1.update("".join(specs).encode("ascii"))
-    hash = sha1.hexdigest()
+    specs = [uni, ip_address, mac_address, salt, timestamp, class_code]
+    hashcode = generate_hashcode(specs)
     specs.append(hash)
     body = "_".join(specs)
 
     try:
-        link = "mailto:%s?subject=Attendance&body=%s" % (recipient, body)
+        link = ("mailto:%s@columbia.edu? " +
+                "subject=Attendance&body=%s") % (RECIPIENT, body)
         subprocess.check_output("open '%s'" % link , shell=True)
-    except:  # TODO fix this
+    except:  # TODO fix this on Windows.
         pass
         
-    print("If it failed, please send an email with subject 'Attendance' and " +
-          "this line in the body to %s@columbia.edu:" % recipient)
+    print("If it failed, please send an email with subject 'Attendance'" +
+          " and a single line in the body of the email " +
+          " to %s@columbia.edu:" % RECIPIENT)
     print("-" * 10)
     print(body)
     print("-" * 10)                                
 
 
-mark_attendance()
+if "__main__" == __name__:
+    mark_attendance()
 

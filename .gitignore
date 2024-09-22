@@ -2,3 +2,4 @@
 .salt.txt
 venv
 my_file.py
+.ipynb_checkpoints/*
