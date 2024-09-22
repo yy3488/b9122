@@ -3,3 +3,5 @@
 venv
 my_file.py
 .ipynb_checkpoints/*
+sender.py
+__pycache__/*

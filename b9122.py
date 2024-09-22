@@ -14,14 +14,23 @@ RECIPIENT = "mm3509"
 
 def get_uni():
     fp = ".uni.txt"
-    if not os.path.exists(fp):
-        uni = input("Please enter your UNI: ").strip()
-        with open(fp, "w+") as f:
-            f.write(uni)
-        return uni
+    
+    if os.path.exists(fp):
+        with open(fp) as f:
+            uni = f.read(-1).strip()
 
-    with open(fp) as f:
-        return f.read(-1).strip()
+        if uni:
+            return uni
+        
+    uni = ""
+    while not uni:
+        uni = input("Please enter your UNI: ").strip()
+        if "" == uni:
+            print("You didn't enter anything. Please enter your UNI.")
+        
+    with open(fp, "w+") as f:
+        f.write(uni)
+    return uni
 
 
 def get_ip():
