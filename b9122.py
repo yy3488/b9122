@@ -19,7 +19,7 @@ if "darwin" == sys.platform:
     OS = MACOS
 elif sys.platform in ["linux", "linux2"]:
     OS = LINUX
-elif platform.startswith("win"):
+elif sys.platform.startswith("win"):
     OS = WINDOWS
 else:
     print("Unknown Operating System, defaulting to macOS")
