@@ -97,7 +97,7 @@ def mark_attendance(class_code=None):
     if MACOS == OS:
         cmd = "open '%s'"
     elif WINDOWS == OS:
-        cmd = "start '%s'"
+        cmd = 'start "" "%s"'
     elif LINUX == OS:
         cmd = "xdg-open '%s'"
     else:
