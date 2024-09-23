@@ -90,7 +90,7 @@ def mark_attendance(class_code=None):
     specs.append(hashcode)
     body = "_".join(specs)
 
-    link = ("mailto:%s@columbia.edu? " +
+    link = ("mailto:%s@columbia.edu?" +
             "subject=Attendance&body=%s") % (RECIPIENT, body)
     print(link)
 
