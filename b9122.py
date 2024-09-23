@@ -48,9 +48,7 @@ def get_salt():
 
 
 def get_time():
-    now = datetime.datetime.now()
-    return str(now.time()).split(".")[0]
-
+    return datetime.datetime.now().strftime("%H:%M:%y%m%d")
 
 
 def generate_hashcode(fields):
