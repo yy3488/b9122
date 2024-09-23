@@ -87,9 +87,10 @@ def mark_attendance(class_code=None):
     specs.append(hashcode)
     body = "_".join(specs)
 
+    link = ("mailto:%s@columbia.edu? " +
+            "subject=Attendance&body=%s") % (RECIPIENT, body)
+
     if MACOS == OS:
-        link = ("mailto:%s@columbia.edu? " +
-                "subject=Attendance&body=%s") % (RECIPIENT, body)
         subprocess.check_output("open '%s'" % link , shell=True)
     elif WINDOWS == OS:
         subprocess.run("xdg-open '%s'" % link, shell=True)
