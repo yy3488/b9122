@@ -10,6 +10,21 @@ import sys
 RECIPIENT = "mm3509"
 
 
+MACOS = "macOS"
+WINDOWS = "windows"
+LINUX = "linux"
+OS = MACOS
+
+if "darwin" == sys.platform:
+    OS = MACOS
+elif sys.platform in ["linux", "linux2"]:
+    OS = LINUX
+elif platform.startswith("win"):
+    OS = WINDOWS
+else:
+    print("Unknown Operating System, defaulting to macOS")
+
+
 def get_uni():
     fp = ".uni.txt"
     
@@ -72,12 +87,12 @@ def mark_attendance(class_code=None):
     specs.append(hashcode)
     body = "_".join(specs)
 
-    try:
+    if MACOS == OS:
         link = ("mailto:%s@columbia.edu? " +
                 "subject=Attendance&body=%s") % (RECIPIENT, body)
         subprocess.check_output("open '%s'" % link , shell=True)
-    except:  # TODO fix this on Windows.
-        pass
+    elif WINDOWS == OS:
+        subprocess.run("xdg-open '%s'" % link, shell=True)
         
     print("If it failed, please send an email with subject 'Attendance'" +
           " and a single line in the body of the email " +
