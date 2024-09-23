@@ -1,5 +1,3 @@
-#!/usr/local/bin/python3
-
 import datetime
 import hashlib
 import os
@@ -73,7 +71,7 @@ def mark_attendance(class_code=None):
 
     specs = [uni, ip_address, mac_address, salt, timestamp, class_code]
     hashcode = generate_hashcode(specs)
-    specs.append(hash)
+    specs.append(hashcode)
     body = "_".join(specs)
 
     try:
