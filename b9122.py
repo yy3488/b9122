@@ -92,11 +92,12 @@ def mark_attendance(class_code=None):
 
     link = ("mailto:%s@columbia.edu? " +
             "subject=Attendance&body=%s") % (RECIPIENT, body)
+    print(link)
 
     if MACOS == OS:
         subprocess.check_output("open '%s'" % link , shell=True)
     elif WINDOWS == OS:
-        subprocess.run("xdg-open '%s'" % link, shell=True)
+        os.system("xdg-open '%s'" % link)
         
     print("If it failed, please send an email with subject 'Attendance'" +
           " and a single line in the body of the email " +
