@@ -95,9 +95,15 @@ def mark_attendance(class_code=None):
     print(link)
 
     if MACOS == OS:
-        subprocess.check_output("open '%s'" % link , shell=True)
+        cmd = "open '%s'"
     elif WINDOWS == OS:
-        os.system("xdg-open '%s'" % link)
+        cmd = "start '%s'"
+    elif LINUX == OS:
+        cmd = "xdg-open '%s'"
+    else:
+        assert False, "Unknown OS!"
+        
+    subprocess.check_output(cmd % link, shell=True)
         
     print("If it failed, please send an email with subject 'Attendance'" +
           " and a single line in the body of the email " +
