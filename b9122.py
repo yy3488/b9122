@@ -79,8 +79,11 @@ def mark_attendance(class_code=None):
     salt = get_salt()
     timestamp = get_time()
 
-    if not class_code:
+    while not class_code:
         class_code = input("Please enter the classroom code: ")
+        if 4 == len(class_code):
+            break
+        print("Class code should be 4 characters, please try again")
 
     specs = [uni, ip_address, mac_address, salt, timestamp, class_code]
     hashcode = generate_hashcode(specs)
