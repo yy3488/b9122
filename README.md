@@ -44,13 +44,13 @@ or simply calling the "alias" defined in the installation:
 miguel
 ```
 
-### Errors
+### Common error
 
 If you get an error such as:
 
 ``` bash
-Please commit your changes or stash them
-Aborting...
+Please commit your changes or stash them before you merge
+Aborting
 ```
 
 then please copy-paste this code in a shell and press ENTER:
@@ -176,7 +176,7 @@ Normally, you don't need to do anything. Python is already installed on macOS, a
 
 1. Make sure you installed Anaconda Python from [here](https://www.anaconda.com/download/success).
 
-2. Run a command prompt shell: in the search box, type `cmd` and press ENTER (or search for CMD, and click on the black icon, not the blue icon which is the Windows Power Shell, nor the multi-colored icon, which is the Git Bash shell)
+2. Run an **ANACONDA COMMAND PROMPT SHELL**. It's different from a Git Bash shell. In the Windows search box, search for "Anaconda prompt", look for it, and press Enter to run it.
 
 3. Type this command (and notice it's **conda**, not **anaconda**):
 
@@ -187,19 +187,21 @@ where conda
 You should see a result like:
 
 ``` bash
-C:\Users\mm3509\AppData\Local\anaconda3\condabin\conda.bat
+C:\Users\mm3509\anaconda3\Library\bin\conda.bat
+C:\Users\mm3509\anaconda3\Scripts\conda.ex
+C:\Users\mm3509\anaconda3\condabin\conda.bat
 ```
 
-Note the path until `condabin`, change the initial `C:\` to `/c/`, and change all backslashes to forward slashes: `\` -> `/`, so it becomes:
+This is a list of paths. Take the first result, until `\Library`. Change the initial `C:\` to `/c/`, and change all backslashes to forward slashes, from `\` to `/`, so the path becomes:
 
 ``` bash
-/c/Users/mm3509/AppData/Local/anaconda3
+/c/Users/mm3509/anaconda3
 ```
 
 And add this text to the end of the path: `/etc/profile.d/conda.sh`, for example:
 
 ``` bash
-/c/Users/mm3509/AppData/Local/anaconda3/etc/profile.d/conda.sh
+/c/Users/mm3509/anaconda3/etc/profile.d/conda.sh
 ```
 
 4. In a **Git Bash shell** (not a CMD shell, nor a Power Shell), edit this code so the first line uses the path from the step before, and press ENTER:
