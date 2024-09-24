@@ -2,7 +2,7 @@
 
 Repository for class Computing for Business Research
 
-## How to mark attendance
+## Step 3: How to mark attendance
 
 After following the steps below to install, you can mark attendance in 3 ways, listed below by order of preference:
 
@@ -26,7 +26,9 @@ from b9122 import b9112
 b9122.mark_attendance()
 ```
 
-## Update software to mark attendance (recurring)
+Please note that VS Code does not work with my software. Please run on Jupyter instead.
+
+## Step 2: Update software to mark attendance (recurring)
 
 I may update the software to fix bugs or to incorporate your feedback, so you'll have to update it as well.
 
@@ -57,7 +59,7 @@ then please copy-paste this code in a shell and press ENTER:
 cd; cd b9122; git stash; git pull
 ```
 
-## Install software to mark attendance (one-off)
+## Step 1: Install software to mark attendance (one-off)
 
 You only need to follow these steps once (or multiple times, if you choose to install manually instead of git). Each step ends with a validation for you to confirm that it succeeded
 
@@ -89,13 +91,27 @@ You succeeded if you see the path to the home folder of your computer, e.g. `/Us
 
 ### Clone this repository
 
-#### with git and command shell
+#### With git and command shell
 
 Start a **new shell** and copy-paste this code:
 
 ``` bash
 cd; git clone https://github.com/mm3509/b9122
 ```
+
+At the end, you should see something like this:
+
+``` bash
+Cloning into 'b9122'...
+remote: Enumerating objects: 64, done.
+remote: Counting objects: 100% (64/64), done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 64 (delta 34), reused 46 (delta 19), pack-reused 0 (from 0)
+Receiving objects: 100% (64/64), 9.39 KiB | 1.88 MiB/s, done.
+Resolving deltas: 100% (34/34), done.
+```
+
+##### Errors
 
 If you get an error that the repository already exists, please run this code instead:
 
@@ -116,18 +132,6 @@ then please copy-paste this code in a shell and press ENTER:
 
 ``` bash
 cd; cd b9122; git stash; git pull
-```
-
-At the end, you should see something like this:
-
-``` bash
-Cloning into 'b9122'...
-remote: Enumerating objects: 64, done.
-remote: Counting objects: 100% (64/64), done.
-remote: Compressing objects: 100% (41/41), done.
-remote: Total 64 (delta 34), reused 46 (delta 19), pack-reused 0 (from 0)
-Receiving objects: 100% (64/64), 9.39 KiB | 1.88 MiB/s, done.
-Resolving deltas: 100% (34/34), done.
 ```
 
 #### Install manually
