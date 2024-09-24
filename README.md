@@ -246,7 +246,7 @@ Enter your password
 Use the down arrow key to get to the bottom of the file, then type this code AS-IS:
 
 ``` bash
-alias miguel="cd; cd b9122; python3 mark_attendance.py
+alias miguel="cd; cd b9122; python3 mark_attendance.py"
 ```
 
 Hit Control-O to save the file, then ENTER to validate that save. Hit Control-X to exit the editor.
