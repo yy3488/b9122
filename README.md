@@ -90,6 +90,14 @@ In the shell you opened above, copy-paste this code:
 cd; git clone https://github.com/mm3509/b9122
 ```
 
+If you get an error that the repository already exists, please run this code instead:
+
+```
+if [ -d ~/b9122 ]; then mv ~/b9122 ~/b9122_backup; fi
+cd; git clone https://github.com/mm3509/b9122
+if [ -d ~/b9122_backup ]; then mv ~/b9122_backup/\.*.txt ~/b9122/; rm -rf b9122_backup; fi
+```
+
 You should see something like this:
 
 ``` bash
