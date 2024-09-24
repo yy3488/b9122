@@ -68,9 +68,9 @@ echo "fi" >> ~/.zshrc
 
 This code ensures compatibility between the Bash shell and the Zsh shell.
 
-#### validation
+#### Validation
 
-**Validation***: Copy-paste this code and press ENTER:
+Copy-paste this code and press ENTER:
 
 ``` bash
 echo $HOME
@@ -100,7 +100,7 @@ Receiving objects: 100% (64/64), 9.39 KiB | 1.88 MiB/s, done.
 Resolving deltas: 100% (34/34), done.
 ```
 
-#### manually
+#### Install manually
 
 If you get an error such as `Please make sure you have the correct access rights and the repository exists`, please come see me during Office Hours so I debug and fix this. In the meantime, you can download the software manually:
 
@@ -134,11 +134,11 @@ mark_attendance.ipynb mark_attendance.py
 
 ### Connect the shell to your installation of Python
 
-### on macOS
+### On macOS
 
 Normally, you don't need to do anything. Python is already installed on macOS, and if you installed Anaconda Python properly, every new shell starts in an Anaconda environment.
 
-### on Windows
+### On Windows
 
 1. Make sure you installed Anaconda Python from [here](https://www.anaconda.com/download/success).
 
@@ -186,7 +186,7 @@ If Windows open the Microsoft Store when you run `python` in a shell, please rem
 
 <img src="https://i.sstatic.net/cbdFj.png">
 
-### validation
+### Validation
 
 You succeeded if you can get the Python version from a shell (Terminal.app or Git Bash):
 
@@ -216,7 +216,7 @@ You should see something like:
 Requirement already satisfied: requests in ...
 ```
 
-### validation
+### Validation
 
 You succeeded if you can type this in a shell (Terminal.app or Git Bash):
 
