@@ -1,3 +1,4 @@
+from string import ascii_letters
 import datetime
 import hashlib
 import os
@@ -60,7 +61,12 @@ def print_version():
     with open(fp) as f:
         version = f.read().strip()
 
-    print("Software version: " + version)
+    msg = "*" * 20
+    msg += "\n" * 2
+    msg += "Success! You did well. Software version: " + version
+    msg += "\n" * 2
+    msg = "*" * 20
+    print(msg)
 
 
 def get_salt():
@@ -94,8 +100,9 @@ def mark_attendance(class_code=None):
     print_version()
 
     if 5 != datetime.datetime.today().weekday():
-        print("You have the right software, but to validate attendance you need to run it during class.")
-        return
+        print("You have the right software and you can run this, but you'll" +
+              " need to be in class to validated it")
+        #return
     
     uni = get_uni()
     ip_address = get_ip()
@@ -103,9 +110,9 @@ def mark_attendance(class_code=None):
     salt = get_salt()
     timestamp = get_time()
 
-    while not class_code:
+    while True:
         class_code = input("Please enter the classroom code: ")
-        if 4 == len(class_code):
+        if 4 == len(class_code) and all(c in ascii_letters for c in class_code):
             break
         print("Class code should be 4 characters, please try again")
 
