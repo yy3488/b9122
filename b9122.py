@@ -65,7 +65,7 @@ def print_version():
     msg += "\n" * 2
     msg += "Success! You did well. Software version: " + version
     msg += "\n" * 2
-    msg = "*" * 20
+    msg += "*" * 20
     print(msg)
 
 
