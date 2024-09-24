@@ -149,7 +149,7 @@ And add this text to the end of the path: `/etc/profile.d/conda.sh`, for example
 ``` bash
 echo ". /c/Users/mm3509/AppData/Local/anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
 echo "conda activate" >> ~/.bash_profile
-echo "alias python3=python"
+echo "alias python3=python" >> ~/.bash_profile
 ```
 
 ## Notes for Windows users
