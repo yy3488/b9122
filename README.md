@@ -42,6 +42,21 @@ or simply calling the "alias" defined in the installation:
 miguel
 ```
 
+### Errors
+
+If you get an error such as:
+
+``` bash
+Please commit your changes or stash them
+Aborting...
+```
+
+then please copy-past this code in a shell and press ENTER:
+
+``` bash
+cd; cd b9122; git stash; git pull
+```
+
 ## Install software to mark attendance (one-off)
 
 You only need to follow these steps once (or multiple times, if you choose to install manually instead of git). Each step ends with a validation for you to confirm that it succeeded
