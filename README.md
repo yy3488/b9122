@@ -51,7 +51,7 @@ Please commit your changes or stash them
 Aborting...
 ```
 
-then please copy-past this code in a shell and press ENTER:
+then please copy-paste this code in a shell and press ENTER:
 
 ``` bash
 cd; cd b9122; git stash; git pull
@@ -105,7 +105,20 @@ cd; git clone https://github.com/mm3509/b9122
 if [ -d ~/b9122_backup ]; then mv ~/b9122_backup/\.*.txt ~/b9122/; rm -rf b9122_backup; fi
 ```
 
-You should see something like this:
+If you get an error such as:
+
+``` bash
+Please commit your changes or stash them
+Aborting...
+```
+
+then please copy-paste this code in a shell and press ENTER:
+
+``` bash
+cd; cd b9122; git stash; git pull
+```
+
+At the end, you should see something like this:
 
 ``` bash
 Cloning into 'b9122'...
