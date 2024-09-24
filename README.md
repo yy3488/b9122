@@ -228,7 +228,7 @@ Requirement already satisfied: requests in ...
 
 ### Validation
 
-You succeeded if you can type this in a shell (Terminal.app or Git Bash):
+You succeeded if you can type this in a shell (Terminal.app or Git Bash) and press ENTER:
 
 ``` bash
 cd; cd b9122; python3 mark_attendance.py

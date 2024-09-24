@@ -86,6 +86,11 @@ def generate_hashcode(fields):
 
 def mark_attendance(class_code=None):
     print_version()
+
+    if 5 != datetime.datetime.today().weekday():
+        print("You have the right software, but to validate attendance you need to run it during class.")
+        return
+    
     uni = get_uni()
     ip_address = get_ip()
     mac_address = str(uuid.getnode())
