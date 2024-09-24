@@ -196,10 +196,10 @@ C:\Users\<your-username>\anaconda3\Scripts\conda.ex
 C:\Users\<your-username>\anaconda3\condabin\conda.bat
 ```
 
-This is a list of paths. Take the first line and copy it into Notepad. Remove the text starting from `\Library`, change the initial `C:\` to `/c/`, and change all backslashes to forward slashes, from `\` to `/`. You should see this in Notepad: "/c/Users/<your-username>/anaconda3"
+This is a list of paths. Take the first line and copy it into Notepad. Remove the text starting from `\Library`, change the initial `C:\` to `/c/`, and change all backslashes to forward slashes, from `\` to `/`. You should see this in Notepad: "/c/Users/your-username/anaconda3"
 
 
-Now add this text to the end of path on Notepad: "/etc/profile.d/conda.sh", so it becomes "/c/Users/<your-username>/anaconda3/etc/profile.d/conda.sh".
+Now add this text to the end of path on Notepad: "/etc/profile.d/conda.sh", so it becomes "/c/Users/your-username/anaconda3/etc/profile.d/conda.sh".
 
 4. In a **Git Bash shell** (not a CMD shell, nor a Power Shell, nor an Anaconda shell), edit this code so the first line uses the path from Notepad in the step before, and press ENTER:
 
