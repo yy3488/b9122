@@ -246,7 +246,7 @@ Software version: September 24th, 2024
 Start a new shell, copy-paste this code, and press ENTER:
 
 ```
-alias miguel="cd; cd b9122; python3 mark_attendance.py" >> ~/.bash_profile
+echo 'alias miguel="cd; cd b9122; python3 mark_attendance.py"' >> ~/.bash_profile
 ```
 
 Now you can mark attendance by simply running `miguel` in a shell.
