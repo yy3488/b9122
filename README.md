@@ -235,7 +235,7 @@ Python 3.12.4
 2. Copy-paste this code and press ENTER:
 
 ``` bash
-python3 -m pip install -r requirements.txt
+cd; cd b9122; python3 -m pip install -r requirements.txt
 ```
 
 You should see something like:
