@@ -71,7 +71,9 @@ Download and install Git for Windows from: [www.gitforwindows.org](www.gitforwin
 
 #### On MacOS
 
-1. Search for `Terminal.app` on Spotlight. Launch it. Go to the Dock, right-click on the Terminal application, click on "Options" and then on "Keep in Dock", so it's always there. You should see a program running with this symbol:
+1. Search for `Terminal.app` on Spotlight. Launch it. Start a **new shell** with Command-N (N for new).
+
+Go to the Dock, right-click on the Terminal application, click on "Options" and then on "Keep in Dock", so it's always there. You should see a program running with this symbol:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Terminalicon2.png/120px-Terminalicon2.png">
 
@@ -89,7 +91,7 @@ You succeeded if you see the path to the home folder of your computer, e.g. `/Us
 
 #### with git and command shell
 
-In the shell you opened above, copy-paste this code:
+Start a **new shell** and copy-paste this code:
 
 ``` bash
 cd; git clone https://github.com/mm3509/b9122
