@@ -199,7 +199,7 @@ Now add this text to the end of path on Notepad: "/etc/profile.d/conda.sh", so i
 4. In a **Git Bash shell** (not a CMD shell, nor a Power Shell, nor an Anaconda shell), edit this code so the first line uses the path from Notepad in the step before (notice the space between the period and the path from Notepad), and press ENTER:
 
 ``` bash
-echo ".    /c/Users/<your-username>/AppData/Local/anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
+echo ".    <the-path-from-notepad>" >> ~/.bash_profile
 echo "conda activate" >> ~/.bash_profile
 echo 'alias python3="python"' >> ~/.bash_profile
 ```
