@@ -10,11 +10,17 @@ After discussing with students in Office Hours, I have decided to support only o
 
 3. Step 3: Open PyCharm, open a new project (call it "B9122", for example).
 
-4. Step 4: On MacOS, PyCharm automatically detects installed Python.
+4. Step 4: On Windows, you have to tell PyCharm where to find Python (similar to how you connected Git Bash to Anaconda Python). On MacOS, PyCharm automatically detects installed Python, if it doesn't, do steps 4.1 and 4.2.
 
-_On Windows_, you have to give it the path to Anaconda Python (similar to what you got from connecting Git Bash to Anaconda Python).
+_Step 4.1 on macOS_: start a new shell and run:
 
-To do so, start an **Anaconda Command Shell**, and type:
+```
+which python
+```
+
+Copy that path to the clipboard, and got to Step 4.2
+
+_Step 4.1 on Windows_: start an **Anaconda Command Shell**, and type:
 
 ``` python
 where python
@@ -22,7 +28,7 @@ where python
 
 Copy the path you get from there.
 
-Open PyCharm. You should see "Configure Python Interpreter" at the top right, then on "Add New Interpreter", then on "Add Local Interpreter". In Environment, "New" is selected, but click on "Existing". Click on the three dots at the right. Paste the path you got from Anaconda Command Shell. Click OK, then OK.
+_Step 4.2_: Open PyCharm. You should see "Configure Python Interpreter" at the top right, then on "Add New Interpreter", then on "Add Local Interpreter". In Environment, "New" is selected, but click on "Existing". Click on the three dots at the right. Paste the path you got from Anaconda Command Shell. Click OK, then OK.
 
 You succeeded if you no longer see "Configure Python Interpreter".
 
