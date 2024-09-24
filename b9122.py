@@ -1,6 +1,7 @@
 import datetime
 import hashlib
 import os
+import pathlib
 import uuid
 from requests import get
 import subprocess
@@ -85,6 +86,11 @@ def generate_hashcode(fields):
     
 
 def mark_attendance(class_code=None):
+
+    # VS Code does not run this file from its directory, so change dir.
+    current_dir = pathlib.Path(__file__).resolve().parent
+    os.chdir(str(current_dir))
+    
     print_version()
 
     if 5 != datetime.datetime.today().weekday():
