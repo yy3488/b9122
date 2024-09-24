@@ -176,38 +176,35 @@ Normally, you don't need to do anything. Python is already installed on macOS, a
 
 1. Make sure you installed Anaconda Python from [here](https://www.anaconda.com/download/success).
 
-2. Run an **ANACONDA COMMAND PROMPT SHELL**. It's different from a Git Bash shell. In the Windows search box, search for "Anaconda prompt", look for it, and press Enter to run it.
+2. Open a text editor, like Notepad:
 
-3. Type this command (and notice it's **conda**, not **anaconda**):
+<img src="https://play-lh.googleusercontent.com/jD8waDJPN1yv4OdcB6_ILw9M4kyNPdtgBYtoTiPrYhxA1l4FLSKXXe4kAcDCjmtZmQ4=w240-h480" />
+
+3. Run an **ANACONDA COMMAND PROMPT SHELL** (it's different from a Git Bash shell!). To do so, in the Windows search box, search for "Anaconda prompt", look for it, and press Enter to run it.
+
+4. Type this command (and notice it's **conda**, not **anaconda**):
 
 ``` bash
 where conda
 ```
 
-You should see a result like:
+You should see a result like this:
 
 ``` bash
-C:\Users\mm3509\anaconda3\Library\bin\conda.bat
-C:\Users\mm3509\anaconda3\Scripts\conda.ex
-C:\Users\mm3509\anaconda3\condabin\conda.bat
+C:\Users\<your-username>\anaconda3\Library\bin\conda.bat
+C:\Users\<your-username>\anaconda3\Scripts\conda.ex
+C:\Users\<your-username>\anaconda3\condabin\conda.bat
 ```
 
-This is a list of paths. Take the first result, until `\Library`. Change the initial `C:\` to `/c/`, and change all backslashes to forward slashes, from `\` to `/`, so the path becomes:
+This is a list of paths. Take the first line and copy it into Notepad. Remove the text starting from `\Library`, change the initial `C:\` to `/c/`, and change all backslashes to forward slashes, from `\` to `/`. You should see this in Notepad: "/c/Users/<your-username>/anaconda3"
+
+
+Now add this text to the end of path on Notepad: "/etc/profile.d/conda.sh", so it becomes "/c/Users/<your-username>/anaconda3/etc/profile.d/conda.sh".
+
+4. In a **Git Bash shell** (not a CMD shell, nor a Power Shell, nor an Anaconda shell), edit this code so the first line uses the path from Notepad in the step before, and press ENTER:
 
 ``` bash
-/c/Users/mm3509/anaconda3
-```
-
-And add this text to the end of the path: `/etc/profile.d/conda.sh`, for example:
-
-``` bash
-/c/Users/mm3509/anaconda3/etc/profile.d/conda.sh
-```
-
-4. In a **Git Bash shell** (not a CMD shell, nor a Power Shell), edit this code so the first line uses the path from the step before, and press ENTER:
-
-``` bash
-echo ". /c/Users/mm3509/AppData/Local/anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
+echo ". /c/Users/<your-username>/AppData/Local/anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
 echo "conda activate" >> ~/.bash_profile
 echo 'alias python3="python"' >> ~/.bash_profile
 ```
