@@ -50,6 +50,18 @@ def get_ip():
     return get('https://api.ipify.org').content.decode('utf8')
 
 
+def print_version():
+    fp = ".version.txt"
+    if not os.path.exists(fp):
+        print("No version defined")
+        return
+
+    with open(fp) as f:
+        version = f.read().strip()
+
+    print("Software version: " + version)
+
+
 def get_salt():
     fp = ".salt.txt"
     if not os.path.exists(fp):
@@ -73,6 +85,7 @@ def generate_hashcode(fields):
     
 
 def mark_attendance(class_code=None):
+    print_version()
     uni = get_uni()
     ip_address = get_ip()
     mac_address = str(uuid.getnode())

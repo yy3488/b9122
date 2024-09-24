@@ -4,7 +4,7 @@ Repository for class Computing for Business Research
 
 ## How to mark attendance
 
-After following the steps below to install, you can mark attendance in 4 ways, listed below by order of preference:
+After following the steps below to install, you can mark attendance in 3 ways, listed below by order of preference:
 
 1. start a shell (`Terminal.app` on macOS, `git bash` on Windows) and run this command:
 
@@ -26,7 +26,21 @@ from b9122 import b9112
 b9122.mark_attendance()
 ```
 
-## Install software to mark attendance
+## Update software to mark attendance (recurring)
+
+After following the steps below to install the software, you can update it by starting a shell (Terminal.app on macOS or Git Bash on Windows), typing this code, and running:
+
+``` bash
+cd; cd b9122; git pull; python3 mark_attendance.py
+```
+
+or simply calling the "alias" defined in the installation:
+
+``` bash
+miguel
+```
+
+## Install software to mark attendance (one-off)
 
 You only need to follow these steps once (or multiple times, if you choose to install manually instead of git). Each step ends with a validation for you to confirm that it succeeded
 
@@ -40,9 +54,19 @@ Download and install Git for Windows from: [www.gitforwindows.org](www.gitforwin
 
 #### On MacOS
 
-Search for `Terminal.app` on Spotlight. Launch it. Go to the Dock, right-click on the Terminal application, click on "Options" and then on "Keep in Dock", so it's always there. You should see a program running with this symbol:
+1. Search for `Terminal.app` on Spotlight. Launch it. Go to the Dock, right-click on the Terminal application, click on "Options" and then on "Keep in Dock", so it's always there. You should see a program running with this symbol:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Terminalicon2.png/120px-Terminalicon2.png">
+
+2. Copy-paste this code into the shell, and press ENTER:
+
+```
+echo "if [ -f ~/.bash_profile ]; then " >> ~/.zshrc
+echo "    . ~/.bash_profile;" >> ~/.zshrc
+echo "fi" >> ~/.zshrc
+```
+
+This code ensures compatibility between the Bash shell and the Zsh shell.
 
 #### validation
 
@@ -149,8 +173,73 @@ And add this text to the end of the path: `/etc/profile.d/conda.sh`, for example
 ``` bash
 echo ". /c/Users/mm3509/AppData/Local/anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
 echo "conda activate" >> ~/.bash_profile
-echo "alias python3=python" >> ~/.bash_profile
+echo 'alias python3="python"' >> ~/.bash_profile
 ```
+
+Note that the last line creates an alias to call `python` whenever you type `python3`. This is for compatibility with my material (because some computers have both `python` for Python 2 and `python3` for Python 3).
+
+5. For these changes to take effect, close your shell and open a new one.
+
+#### Errors
+
+If Windows open the Microsoft Store when you run `python` in a shell, please remove the execution aliases. Go to Settings > Apps and features > App Execution Aliases and turn off the items called "App Installer" that start with `python` and end with `.exe`. See [this thread](https://superuser.com/questions/1437590/typing-python-on-windows-10-version-1903-command-prompt-opens-microsoft-stor/1461471#1461471) for details.
+
+<img src="https://i.sstatic.net/cbdFj.png">
+
+### validation
+
+You succeeded if you can get the Python version from a shell (Terminal.app or Git Bash):
+
+``` bash
+python3 --version
+```
+
+You should see something like:
+
+``` bash
+Python 3.12.4
+```
+
+## Install the requirements for this repository
+
+1. Open a new shell (Terminal.app or Git Bash)
+
+2. Copy-paste this code and press ENTER:
+
+``` bash
+python3 -m pip install -r requirements.txt
+```
+
+You should see something like:
+
+``` bash
+Requirement already satisfied: requests in ...
+```
+
+### validation
+
+You succeeded if you can type this in a shell (Terminal.app or Git Bash):
+
+``` bash
+cd; cd b9122; python3 mark_attendance.py
+```
+
+and see this result:
+
+``` bash
+Software version: September 24th, 2024
+...
+```
+
+## Define a shortcut (alias) to run the code
+
+Start a new shell, copy-paste this code, and press ENTER:
+
+```
+alias miguel="cd; cd b9122; python3 mark_attendance.py" >> ~/.bash_profile
+```
+
+Now you can mark attendance by simply running `miguel` in a shell.
 
 ## Notes for Windows users
 
