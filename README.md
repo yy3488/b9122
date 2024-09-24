@@ -60,16 +60,6 @@ Download and install Git for Windows from: [www.gitforwindows.org](www.gitforwin
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Terminalicon2.png/120px-Terminalicon2.png">
 
-2. Copy-paste this code into the shell, and press ENTER:
-
-```
-echo "if [ -f ~/.bash_profile ]; then " >> ~/.zshrc
-echo "    . ~/.bash_profile;" >> ~/.zshrc
-echo "fi" >> ~/.zshrc
-```
-
-This code ensures compatibility between the Bash shell and the Zsh shell.
-
 #### Validation
 
 Copy-paste this code and press ENTER:
@@ -241,15 +231,50 @@ Software version: September 24th, 2024
 ...
 ```
 
-## Define a shortcut (alias) to run the code
+## Define a shortcut (alias) to run the code (optional)
 
-Start a new shell, copy-paste this code, and press ENTER:
+### On macOS
+
+Start a new shell. We'll use the Nano text editor, which can be daunting at first, to edit a system file that macOS normally doesn't let us access:
+
+``` bash
+sudo nano ~/.zshrc
+```
+
+Enter your password
+
+Use the down arrow key to get to the bottom of the file, then type this code AS-IS:
+
+``` bash
+alias miguel="cd; cd b9122; python3 mark_attendance.py
+```
+
+Hit Control-O to save the file, then ENTER to validate that save. Hit Control-X to exit the editor.
+
+### On Windows
+
+Start a new shell, copy-paste this code, and press ENTER (it may ask for your password):
 
 ```
 echo 'alias miguel="cd; cd b9122; python3 mark_attendance.py"' >> ~/.bash_profile
 ```
 
+### Validation
+
 Now you can mark attendance by simply running `miguel` in a shell.
+
+Start a **new shell**, copy-paste this code, and type ENTER:
+
+```
+miguel
+```
+
+You succeeded if you see this result:
+
+``` bash
+Software version: September 24th, 2024
+...
+```
 
 ## Notes for Windows users
 
