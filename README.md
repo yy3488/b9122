@@ -63,7 +63,7 @@ cd; cd b9122; git stash; git pull
 
 You only need to follow these steps once (or multiple times, if you choose to install manually instead of git). Each step ends with a validation for you to confirm that it succeeded
 
-### Install a bash shell
+### Step 1.1: Install a bash shell
 
 #### On Windows
 
@@ -87,11 +87,11 @@ Copy-paste this code and press ENTER:
 echo $HOME
 ```
 
-You succeeded if you see the path to the home folder of your computer, e.g. `/Users/mm3509` on macOS or `/c/Users/mm3509` on Windows.
+You succeeded if you see the path to the home folder of your computer, e.g. `/Users/<your-username>` on macOS or `/c/Users/<your-username>` on Windows.
 
-### Clone this repository
+### Step 1.2: Clone this repository
 
-#### With git and command shell
+#### With git and command shell (strongly encouraged)
 
 Start a **new shell** and copy-paste this code:
 
@@ -134,7 +134,7 @@ then please copy-paste this code in a shell and press ENTER:
 cd; cd b9122; git stash; git pull
 ```
 
-#### Install manually
+#### Install manually (strong **discouraged**)
 
 If you get an error such as `Please make sure you have the correct access rights and the repository exists`, please come see me during Office Hours so I debug and fix this. In the meantime, you can download the software manually:
 
@@ -166,13 +166,13 @@ You succeeded if you see this:
 mark_attendance.ipynb mark_attendance.py
 ```
 
-### Connect the shell to your installation of Python
+### Step 1.3: Connect the shell to your installation of Python
 
-### On macOS
+#### On macOS
 
 Normally, you don't need to do anything. Python is already installed on macOS, and if you installed Anaconda Python properly, every new shell starts in an Anaconda environment.
 
-### On Windows
+#### On Windows
 
 1. Make sure you installed Anaconda Python from [here](https://www.anaconda.com/download/success).
 
@@ -214,13 +214,13 @@ Note that the last line creates an alias to call `python` whenever you type `pyt
 
 5. For these changes to take effect, close your shell and open a new one.
 
-#### Errors
+##### Errors
 
 If Windows open the Microsoft Store when you run `python` in a shell, please remove the execution aliases. Go to Settings > Apps and features > App Execution Aliases and turn off the items called "App Installer" that start with `python` and end with `.exe`. See [this thread](https://superuser.com/questions/1437590/typing-python-on-windows-10-version-1903-command-prompt-opens-microsoft-stor/1461471#1461471) for details.
 
 <img src="https://i.sstatic.net/cbdFj.png">
 
-### Validation
+#### Validation
 
 You succeeded if you can get the Python version from a shell (Terminal.app or Git Bash):
 
@@ -234,7 +234,7 @@ You should see something like:
 Python 3.12.4
 ```
 
-## Install the requirements for this repository
+### Step 1.4: Install the requirements for this repository
 
 1. Open a new shell (Terminal.app or Git Bash)
 
@@ -250,7 +250,7 @@ You should see something like:
 Requirement already satisfied: requests in ...
 ```
 
-### Validation
+#### Validation
 
 You succeeded if you can type this in a shell (Terminal.app or Git Bash) and press ENTER:
 
@@ -265,9 +265,9 @@ Software version: September 24th, 2024
 ...
 ```
 
-## Define a shortcut (alias) to run the code (optional)
+### Step 1.5: Define a shortcut (alias) to run the code (optional)
 
-### On macOS
+#### On macOS
 
 Start a new shell. We'll use the Nano text editor, which can be daunting at first, to edit a system file that macOS normally doesn't let us access:
 
@@ -285,7 +285,7 @@ alias miguel="cd; cd b9122; python3 mark_attendance.py"
 
 Hit Control-O to save the file, then ENTER to validate that save. Hit Control-X to exit the editor.
 
-### On Windows
+#### On Windows
 
 Start a new shell, copy-paste this code, and press ENTER (it may ask for your password):
 
@@ -293,7 +293,7 @@ Start a new shell, copy-paste this code, and press ENTER (it may ask for your pa
 echo 'alias miguel="cd; cd b9122; python3 mark_attendance.py"' >> ~/.bash_profile
 ```
 
-### Validation
+#### Validation
 
 Now you can mark attendance by simply running `miguel` in a shell.
 
