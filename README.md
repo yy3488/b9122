@@ -28,6 +28,8 @@ b9122.mark_attendance()
 
 ## Update software to mark attendance (recurring)
 
+I may update the software to fix bugs or to incorporate your feedback, so you'll have to update it as well.
+
 After following the steps below to install the software, you can update it by starting a shell (Terminal.app on macOS or Git Bash on Windows), typing this code, and running:
 
 ``` bash
