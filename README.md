@@ -93,7 +93,7 @@ You succeeded if you see the path to the home folder of your computer, e.g. `/Us
 
 ### Step 1.2: Clone this repository
 
-#### With git and command shell (strongly encouraged)
+#### Step 1.2.1: With git and command shell (strongly encouraged)
 
 Start a **new shell** and copy-paste this code:
 
@@ -113,7 +113,7 @@ Receiving objects: 100% (64/64), 9.39 KiB | 1.88 MiB/s, done.
 Resolving deltas: 100% (34/34), done.
 ```
 
-##### Errors
+##### Common error 1
 
 If you get an error that the repository already exists, please run this code instead:
 
@@ -123,7 +123,7 @@ cd; git clone https://github.com/mm3509/b9122
 if [ -d ~/b9122_backup ]; then mv ~/b9122_backup/\.*.txt ~/b9122/; rm -rf b9122_backup; fi
 ```
 
-If you get an error such as:
+##### Common error 2
 
 ``` bash
 Please commit your changes or stash them
@@ -136,7 +136,7 @@ then please copy-paste this code in a shell and press ENTER:
 cd; cd b9122; git stash; git pull
 ```
 
-#### Install manually (strong **discouraged**)
+#### Step 1.2.2: Install manually (strong **discouraged**)
 
 If you get an error such as `Please make sure you have the correct access rights and the repository exists`, please come see me during Office Hours so I debug and fix this. In the meantime, you can download the software manually:
 
@@ -173,6 +173,8 @@ mark_attendance.ipynb mark_attendance.py
 #### On macOS
 
 Normally, you don't need to do anything. Python is already installed on macOS, and if you installed Anaconda Python properly, every new shell starts in an Anaconda environment.
+
+Please come see me if you have issues.
 
 #### On Windows
 
@@ -257,7 +259,12 @@ cd; cd b9122; python3 mark_attendance.py
 and see this result:
 
 ``` bash
-Software version: September 24th, 2024
+********************
+
+Success! You did well. Software version: September 24th, 2024
+
+********************
+You have the right software and you can run this, but you'll need to be in class to validate it
 ...
 ```
 
@@ -302,7 +309,12 @@ miguel
 You succeeded if you see this result:
 
 ``` bash
-Software version: September 24th, 2024
+********************
+
+Success! You did well. Software version: September 24th, 2024
+
+********************
+You have the right software and you can run this, but you'll need to be in class to validate it
 ...
 ```
 

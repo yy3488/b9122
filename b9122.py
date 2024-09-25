@@ -101,7 +101,7 @@ def mark_attendance(class_code=None):
 
     if 5 != datetime.datetime.today().weekday():
         print("You have the right software and you can run this, but you'll" +
-              " need to be in class to validated it")
+              " need to be in class to validate it")
         #return
     
     uni = get_uni()
