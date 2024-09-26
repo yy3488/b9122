@@ -69,7 +69,7 @@ You only need to follow these steps once (or multiple times, if you choose to in
 
 #### On Windows
 
-Download and install Git for Windows from: [www.gitforwindows.org](www.gitforwindows.org). Say OK to all the default settings. Add the program to the task bar and you should see this symbol:
+Download and install Git for Windows from: [www.gitforwindows.org](https://gitforwindows.org). Say OK to all the default settings. Add the program to the task bar and you should see this symbol:
 
 <img src="https://avatars.githubusercontent.com/u/4571183?s=200&amp;v=4" width="100" height="100" alt="@git-for-windows">
 
