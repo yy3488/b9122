@@ -1,3 +1,5 @@
+import doctest
+
 def calculate_interest(balance, rate, transactions):
     """
     Calculate the compound interest paid monthly on the balance of a bank account.
@@ -11,6 +13,12 @@ def calculate_interest(balance, rate, transactions):
     Returns:
       The interest rate to be paid at the end of the month.
 
+    >>> interest = calculate_interest(1000, 0.05, [])
+    >>> print("%.2f" % interest)
+    4.02
+    >>> interest = calculate_interest(0, 0.05, [(0, 1000)])
+    >>> print("%.2f" % interest)
+    4.02
     >>> transactions = [(5, 500), (10, -200), (20, 100)]
     >>> interest = calculate_interest(1000, 0.05, transactions)
     >>> print("%.2f" % interest)
@@ -23,12 +31,41 @@ def calculate_interest(balance, rate, transactions):
     # Daily interest rate, that compounds to the annual rate.
     daily_rate = (1 + rate) ** (1 / days_in_year) - 1
 
+    # TODO: fix the calculation of interst, filling in the blank lines
+    # in this document, so that the function return the right answer.
+    interest = 0
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    return interest
+
+
+
 
 
 if '__main__' == __name__:
     # Doc-tests
     doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
     assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
+
+    msg = ["*" * 20,
+           ""
+           "Success! your doc-tests pass!"
+           ""
+           "*" * 20]
+    print("\n".join(msg))
 
     # Example usage:
     initial_balance = 1000
