@@ -11,7 +11,7 @@ After following the steps below to install, you can mark attendance in 3 ways, l
 1. start a shell (`Terminal.app` on macOS, `git bash` on Windows) and run this command:
 
 ```bash
-cd; cd b9122; git pull; python mark_attendance.py
+cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python mark_attendance.py
 ```
 
 2. start a Jupyter notebook **in this directory** `cd; cd b9122; jupyter notebook`, open the notebook `mark_attendance.ipynb`, and run the first cell
@@ -37,7 +37,7 @@ I may update the software to fix bugs or to incorporate your feedback, so you'll
 After following the steps below to install the software, you can update it by starting a shell (Terminal.app on macOS or Git Bash on Windows), typing this code, and running:
 
 ``` bash
-cd; cd b9122; git pull; python3 mark_attendance.py
+cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python3 mark_attendance.py
 ```
 
 or simply calling the "alias" defined in the installation:
@@ -283,7 +283,7 @@ Enter your password
 Use the down arrow key to get to the bottom of the file, then type this code AS-IS:
 
 ``` bash
-alias miguel="cd; cd b9122; python3 mark_attendance.py"
+alias miguel="cd; cd b9122; python3 -m pip install -r requirements.txt; python3 mark_attendance.py"
 ```
 
 Hit Control-O to save the file, then ENTER to validate that save. Hit Control-X to exit the editor.
@@ -293,7 +293,7 @@ Hit Control-O to save the file, then ENTER to validate that save. Hit Control-X 
 Start a new shell, copy-paste this code, and press ENTER (it may ask for your password):
 
 ```
-echo 'alias miguel="cd; cd b9122; python3 mark_attendance.py"' >> ~/.bash_profile
+echo 'alias miguel="cd; cd b9122; python3 -m pip install -r requirements.txt; python3 mark_attendance.py"' >> ~/.bash_profile
 ```
 
 #### Validation
