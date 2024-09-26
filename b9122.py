@@ -1,4 +1,4 @@
-from string import ascii_letters
+import string
 import datetime
 import hashlib
 import os
@@ -112,7 +112,7 @@ def mark_attendance(class_code=None):
 
     while True:
         class_code = input("Please enter the classroom code: ")
-        if 4 == len(class_code) and all(c in ascii_letters for c in class_code):
+        if 4 == len(class_code) and all(c in string.ascii_letters + string.digits for c in class_code):
             break
         print("Class code should be 4 characters, please try again")
 
