@@ -16,7 +16,7 @@ def sum_numpy(a, b):
     True
     """
 
-    return a.astype(numpy.uintp) + b.astype(numpy.uintp)
+    return a + b
 
 
 if '__main__' == __name__:
