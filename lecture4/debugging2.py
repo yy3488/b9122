@@ -35,6 +35,15 @@ def compute_interest(balance, rate, day, month):
     """
 
     # Note: in this exercise, days and months are NOT zero-indexed.
+
+    # TODO: add a variable for the value of each part of this
+    # comparison, then inspect the value, e.g.:
+    # a = 2 == day
+    # print(a)
+    # b = 1 == month
+    # print(b)
+    # print(a & b)
+    
     if 2 == day & 1 == month:
         interest = balance * rate
         msg = ("The customer should be paid this interest on day"

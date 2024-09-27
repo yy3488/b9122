@@ -23,6 +23,8 @@ def sum_numpy(a, b):
 # TODO: find why 250 + 250 is not 500
 a = numpy.uint8(250)
 b = numpy.uint8(250)
+
+# TODO: add a breakpoint here, then step into the function.
 c = sum_numpy(a, b)
 
 
