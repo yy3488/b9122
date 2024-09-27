@@ -115,7 +115,13 @@ Resolving deltas: 100% (34/34), done.
 
 ##### Common error 1
 
-If you get an error that the repository already exists, please run this code instead:
+If you get an error that the repository already exists:
+
+```
+fatal: destination path 'b9122' already exists and is not an empty directory
+```
+
+then please run this code instead:
 
 ```
 if [ -d ~/b9122 ]; then mv ~/b9122 ~/b9122_backup; fi

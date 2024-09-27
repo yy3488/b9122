@@ -24,11 +24,11 @@ def compute_interest(balance, rate, day, month):
     
     >>> today = datetime.datetime.today()
     >>> i = compute_interest(1000, 0.05, 27, 9)
-    The customer ...
+    The customer should not be paid interest on day 27 and month 9.
     >>> i
     0
     >>> i = compute_interest(1000, 0.05, 2, 1)
-    The customer ...
+    The customer should be paid this interest on day 2 and month 1: 50.0.
     >>> i
     50.0
 
@@ -38,23 +38,21 @@ def compute_interest(balance, rate, day, month):
     if 2 == day & 1 == month:
         interest = balance * rate
         msg = ("The customer should be paid this interest on day"
-               " %s and month %s: %3.1f") % (interest, day, month)
+               " %s and month %s: %3.1f.") % (interest, day, month)
         
     else:
         interest = 0
         msg = ("The customer should not be paid interest on day %s and" +
-               " month %s") % (day, month)
+               " month %s.") % (day, month)
         
     print(msg)
     return interest
 
+
+compute_interest(1000, 0.04, 2, 1)
 
 doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
 assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
 
 print("Your doc-tests pass, congratulations!")
 
-today = datetime.datetime.today()
-compute_interest(1000, 0.04, today.day, today.month)
-
-compute_interest(1000, 0.04, 2, 1)
