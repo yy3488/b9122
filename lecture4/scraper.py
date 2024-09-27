@@ -1,32 +1,59 @@
 import bs4
+import os
 import requests
 import subprocess
 
-
 # TODO: change these values to suit your case.
-URL = "https://www.ebay.com/itm/395704379225"
+URL = "https://www.ebay.com/itm/156425666332"
 MAX_PRICE = 20
 PRICE_START = "US $"
+DEBUG = False
 
 
-def get_html(url=URL):
+def dump(html):
+    fp = os.path.join(os.path.expanduser("~"),
+                      "Downloads",
+                      "lecture4_debug.html"
+                      )
+    with open(fp, "w+") as f:
+        f.write(html)
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36",
-        "X-Requested-With": "XMLHttpRequest"
-    }
+    print("Saved HTML to file for you to debug: " + fp)
 
-    html = requests.get(url, headers=headers).text
+    return fp
 
-    return html
-    
+
+def get_html(url=URL, no_user_agent=True):
+
+    print("Getting the HTML from the web...")
+
+    if no_user_agent:
+        response = requests.get(url)
+    else:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36",
+            "X-Requested-With": "XMLHttpRequest"
+        }
+        response = requests.get(url, headers=headers)
+        
+    return response.text
+
 
 def get_price(url=URL):
-    html = get_html(url)
+    html = get_html(url, no_user_agent=True)
 
+    print("Parsing into BeautifulSoup...")
     soup = bs4.BeautifulSoup(html, features="html.parser")
 
-    # TODO: change the rest of this function to suit your 
+    print("Looking for the right tag...")
+
+    ########################################################################
+    #
+    #
+    # TODO: change the rest of this function to suit your case.
+    #
+    #
+    ########################################################################
     
     # Select the right div. Notice the # for an ID.
     results = soup.select("div#RightSummaryPanel")
@@ -50,6 +77,15 @@ def get_price(url=URL):
 
 
 if "__main__" == __name__:
-    price = get_price(URL)
-    if price < MAX_PRICE:
-        subprocess.check_output("open " + URL, shell=True)
+    try:
+        price = get_price(URL)
+    except IndexError:
+        print("Got an error!! Please debug.")
+        html = get_html(URL)
+        dump(html)
+    else:
+        if price < MAX_PRICE:
+            subprocess.check_output("open " + URL, shell=True)
+
+# Include this into crontab to run every day at 2.30pm with:
+# cat <(crontab -l) <(echo "30 14 * * * python $HOME/b9122/lecture4/scraper.py") | crontab -

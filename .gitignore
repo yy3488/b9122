@@ -6,3 +6,4 @@ my_file.py
 sender.py
 __pycache__/*
 .DS_Store
+lecture4/scraper2.py
