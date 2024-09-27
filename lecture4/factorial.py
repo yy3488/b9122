@@ -24,3 +24,9 @@ def factorial(n):
 
     # TODO: complete this function.
     return -1
+
+
+if '__main__' == __name__:
+    doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
+    assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
+    main()

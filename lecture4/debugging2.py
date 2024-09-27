@@ -49,13 +49,12 @@ def compute_interest(balance, rate, day, month):
     return interest
 
 
-if '__main__' == __name__:
-    doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
-    assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
+doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
+assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
 
-    print("Your doc-tests pass, congratulations!")
+print("Your doc-tests pass, congratulations!")
 
-    today = datetime.datetime.today()
-    compute_interest(1000, 0.04, today.day, today.month)
+today = datetime.datetime.today()
+compute_interest(1000, 0.04, today.day, today.month)
 
-    compute_interest(1000, 0.04, 2, 1)
+compute_interest(1000, 0.04, 2, 1)
