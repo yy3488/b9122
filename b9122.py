@@ -133,11 +133,19 @@ def mark_attendance(class_code=None):
         cmd = "xdg-open '%s'"
     else:
         assert False, "Unknown OS!"
-        
-    subprocess.check_output(cmd % link, shell=True)
-        
-    print("If it failed, please send an email with subject 'Attendance'" +
-          " and a single line in the body of the email " +
+
+    try:
+        subprocess.check_output(cmd % link, shell=True)
+    except subprocess.CalledProcessError:
+        print("*" * 20)
+        print()
+        print("Unable to start a new email, please send manually.")
+        print()
+        print("*" * 20)
+
+
+    print("If the email did not open, please send an email with subject" +
+          " 'Attendance' and a single line in the body of the email " +
           " to %s@columbia.edu:" % RECIPIENT)
     print("-" * 10)
     print(body)
