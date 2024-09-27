@@ -19,6 +19,15 @@ def sum_numpy(a, b):
     return a + b
 
 
+
+a = numpy.uint8(250)
+b = numpy.uint8(250)
+c = sum_numpy(a, b)
+
+# TODO: find why 250 + 250 is not 500
+print(c)
+
+
 if '__main__' == __name__:
     doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
     assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
