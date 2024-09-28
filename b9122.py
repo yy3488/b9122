@@ -10,7 +10,13 @@ import sys
 
 
 RECIPIENT = "mm3509"
+RESET_UNI ="reset-uni"
+ARGS = [
+    RESET_UNI
+]
 
+
+UNI_FILE = ".uni.txt"
 
 MACOS = "macOS"
 WINDOWS = "windows"
@@ -28,10 +34,9 @@ else:
 
 
 def get_uni():
-    fp = ".uni.txt"
     
-    if os.path.exists(fp):
-        with open(fp) as f:
+    if os.path.exists(UNI_FILE):
+        with open(UNI_FILE) as f:
             uni = f.read(-1).strip()
 
         if uni:
@@ -43,7 +48,7 @@ def get_uni():
         if "" == uni:
             print("You didn't enter anything. Please enter your UNI.")
         
-    with open(fp, "w+") as f:
+    with open(UNI_FILE, "w+") as f:
         f.write(uni)
     return uni
 
@@ -152,6 +157,17 @@ def mark_attendance(class_code=None):
     print("-" * 10)                                
 
 
-if "__main__" == __name__:
+def main():
+    args = sys.argv[1:]
+    if 1 < len(args) or args[0] not in ARGS:
+        raise ValueError("This code takes at most one argument from the" +
+                         " following list: " + ",".join(ARGS))
+    arg = args[0]
+    if RESET_UNI == arg:
+        os.unlink(UNI_FILE)
+
     mark_attendance()
 
+
+if "__main__" == __name__:
+    main()
