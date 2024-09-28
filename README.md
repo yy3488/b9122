@@ -192,7 +192,7 @@ and see this result:
 ``` bash
 ********************
 
-Success! You did well. Software version: September 24th, 2024
+Success! You did well. Software version: September 28th, 2024
 
 ********************
 You have the right software and you can run this, but you'll need to be in class to validate it
@@ -242,7 +242,7 @@ You succeeded if you see this result:
 ``` bash
 ********************
 
-Success! You did well. Software version: September 24th, 2024
+Success! You did well. Software version: September 28th, 2024
 
 ********************
 You have the right software and you can run this, but you'll need to be in class to validate it
