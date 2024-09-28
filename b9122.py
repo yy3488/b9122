@@ -159,12 +159,18 @@ def mark_attendance(class_code=None):
 
 def main():
     args = sys.argv[1:]
-    if 1 < len(args) or args[0] not in ARGS:
-        raise ValueError("This code takes at most one argument from the" +
-                         " following list: " + ",".join(ARGS))
-    arg = args[0]
-    if RESET_UNI == arg:
-        os.unlink(UNI_FILE)
+    error_msg = ("This code takes at most one argument from the" +
+                 " following list: " + ",".join(ARGS))
+    if 1 < len(args):
+        raise ValueError(error_msg)
+
+    if 1 == len(args):
+        arg = args[0]
+        if arg not in ARGS:
+            raise ValueError(error_msg)
+
+        if RESET_UNI == arg:
+            os.unlink(UNI_FILE)
 
     mark_attendance()
 
