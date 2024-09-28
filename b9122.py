@@ -169,7 +169,7 @@ def main():
         if arg not in ARGS:
             raise ValueError(error_msg)
 
-        if RESET_UNI == arg:
+        if RESET_UNI == arg and os.path.exists(UNI_FILE):
             os.unlink(UNI_FILE)
 
     mark_attendance()
