@@ -16,6 +16,9 @@ def calculate_interest(balance, rate, transactions):
     >>> interest = calculate_interest(1000, 0.05, [])
     >>> print("%.2f" % interest)
     4.02
+    >>> interest = calculate_interest(10000, 0.05, [])
+    >>> print("%.2f" % interest)
+    40.18
     >>> interest = calculate_interest(0, 0.05, [(0, 1000)])
     >>> print("%.2f" % interest)
     4.02

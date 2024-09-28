@@ -4,63 +4,6 @@ Repository for class Computing for Business Research.
 
 This file explains how to install and mark attendance. For PyCharm, please go [here](PyCharm.md).
 
-## Step 3: How to mark attendance
-
-After following the steps below to install, you can mark attendance in 3 ways, listed below by order of preference:
-
-1. start a shell (`Terminal.app` on macOS, `git bash` on Windows) and run this command:
-
-```bash
-cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python mark_attendance.py
-```
-
-2. start a Jupyter notebook **in this directory** `cd; cd b9122; jupyter notebook`, open the notebook `mark_attendance.ipynb`, and run the first cell
-
-3. start a Python interpreter, or use a new cell in your Jupyter notebook, copy-paste the code below, and run it. You may need to change the folder in the fourth line to where you installed my code. Also, this option will not update your copy of my code to the latest version.
-
-```python
-import os
-
-# Change this to your own b9122 folder.
-os.chdir(os.path.expanduser("~/b9122"))
-
-from b9122 import b9112
-b9122.mark_attendance()
-```
-
-Please note that VS Code does not work with my software. Please run on Jupyter instead.
-
-## Step 2: Update software to mark attendance (recurring)
-
-I may update the software to fix bugs or to incorporate your feedback, so you'll have to update it as well.
-
-After following the steps below to install the software, you can update it by starting a shell (Terminal.app on macOS or Git Bash on Windows), typing this code, and running:
-
-``` bash
-cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python3 mark_attendance.py
-```
-
-or simply calling the "alias" defined in the installation:
-
-``` bash
-miguel
-```
-
-### Common error
-
-If you get an error such as:
-
-``` bash
-Please commit your changes or stash them before you merge
-Aborting
-```
-
-then please copy-paste this code in a shell and press ENTER:
-
-``` bash
-cd; cd b9122; git stash; git pull
-```
-
 ## Step 1: Install software to mark attendance (one-off)
 
 You only need to follow these steps once (or multiple times, if you choose to install manually instead of git). Each step ends with a validation for you to confirm that it succeeded
@@ -93,7 +36,7 @@ You succeeded if you see the path to the home folder of your computer, e.g. `/Us
 
 ### Step 1.2: Clone this repository
 
-#### Step 1.2.1: With git and command shell (strongly encouraged)
+Note: Ater lecture 4, manual download of this repository from GitHub is no longer supported. Only git and command shell are supported.
 
 Start a **new shell** and copy-paste this code:
 
@@ -141,24 +84,6 @@ then please copy-paste this code in a shell and press ENTER:
 ``` bash
 cd; cd b9122; git stash; git pull
 ```
-
-#### Step 1.2.2: Install manually (strong **discouraged**)
-
-If you get an error such as `Please make sure you have the correct access rights and the repository exists`, please come see me during Office Hours so I debug and fix this. In the meantime, you can download the software manually:
-
-- visit this link: [https://github.com/mm3509/b9122](https://github.com/mm3509/b9122)
-
-- search for the green button at the top right that says `Code`
-
-- click on the down arrow
-
-- click on Download ZIP
-
-- look for the ZIP file in your Downloads folder
-
-- extract to your home folder **without** the path `b9122` (otherwise, you'll have a nested extraction)
-
-If you get a nested folder, e.g. `b9122/b9122`, please move the nested folder up one level, so there's only one `b9122` in the path.
 
 #### validation
 
@@ -323,6 +248,49 @@ Success! You did well. Software version: September 24th, 2024
 You have the right software and you can run this, but you'll need to be in class to validate it
 ...
 ```
+
+## Step 2: Update software to mark attendance (recurring)
+
+I may update the software to fix bugs or to incorporate your feedback, so you'll have to update it as well.
+
+After following the steps above to install the software, you can update it by starting a shell (Terminal.app on macOS or Git Bash on Windows), typing this code and running it:
+
+``` bash
+cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python3 mark_attendance.py
+```
+
+or simply calling the "alias" defined in the installation:
+
+``` bash
+miguel
+```
+
+### Common error
+
+If you get an error such as:
+
+``` bash
+Please commit your changes or stash them before you merge
+Aborting
+```
+
+then please copy-paste this code in a shell and press ENTER:
+
+``` bash
+cd; cd b9122; git stash; git pull
+```
+
+## Step 3: How to mark attendance
+
+After following the steps below to install, here is how to mark attendance.
+
+Start a shell (`Terminal.app` on macOS, `git bash` on Windows) and run this command:
+
+```bash
+cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python mark_attendance.py
+```
+
+It seems that VS Code does not work with my software. Please run from the shell instead.
 
 ## Notes for Windows users
 

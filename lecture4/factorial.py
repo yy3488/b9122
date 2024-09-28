@@ -26,7 +26,9 @@ def factorial(n):
     return -1
 
 
-if '__main__' == __name__:
-    doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
-    assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
-    main()
+tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
+if 0 < tests_run:
+    assert 0 == tests_failed, 'Some doc-tests failed, exiting...'
+    print("Your doc-tests pass, congratulations!")
+else:
+    print("Unable to run doc-tests, please see Miguel!")

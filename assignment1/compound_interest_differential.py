@@ -13,6 +13,9 @@ def calculate_interest_differential(balance, baseline_rate, bonus_rate, transact
     Returns:
       The interest rate to be paid at the end of the month.
 
+    >>> interest = calculate_interest_differential(10000, 0.02, 0.05, [])
+    >>> print("%.2f" % interest)
+    40.18
     >>> interest = calculate_interest_differential(1000, 0.02, 0.04, [])
     >>> print("%.2f" % interest)
     3.23
@@ -64,7 +67,10 @@ if '__main__' == __name__:
     # Transactions: day 5 deposit 500, day 10 withdraw 200, day 20 deposit 100.
     transactions = [(5, 500), (10, -200), (20, 100)]
 
-    interest = calculate_interest(initial_balance, annual_rate, transactions)
+    interest = calculate_interest_differential(initial_balance,
+                                               annual_rate / 2,
+                                               annual_rate,
+                                               transactions)
 
     print(f"Interest to be paid at the end of the month: ${interest:.2f}")
 
