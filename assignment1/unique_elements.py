@@ -1,12 +1,12 @@
 import doctest
 
 
-def get_unique(sorted_list):
+def get_unique(ascending_list):
     """
     Gets the unique elements of a sorted list of integers.
 
     Args:
-      l: A sorted list of integers.
+      l: A list of integers, sorted ascendingly.
 
     Returns:
       A list of unique elements in the original list.
