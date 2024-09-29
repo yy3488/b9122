@@ -40,10 +40,26 @@ def get_unique(ascending_list):
 
     ############################################################################
     #
-    # TODO: Complete the rest of this function
+    # TODO: Complete the rest of this function, until the next heading
+    # similar to this one
     #
     ############################################################################
-    pass
+    return []
+
+
+
+
+
+
+
+
+    ############################################################################
+    #
+    # Your function should end here. You can write or edit code below
+    # this point to help you solve the assignment, but it will not be
+    # tested nor graded.
+    #
+    ############################################################################
 
 
 tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
