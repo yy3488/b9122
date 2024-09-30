@@ -2,6 +2,8 @@
 
 Out on Sep 30th, due on Tuesday Oct 8th, © 2024 Miguel Morin
 
+This is a group assignment, with groups allocated randomly within sections.
+
 ## Exercise 1: Interest rates, recursive (35 points)
 
 This exercise is similar to assignment 1, but now I ask that you write a recursive function and more doc-tests.
