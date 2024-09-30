@@ -4,7 +4,7 @@ import doctest
 def calculate_interest(balance, rate, transactions):
     """
     Calculate the compound interest paid monthly on the balance of
-    a bank account.
+    a bank account, recursively.
 
     Args:
       balance: Current balance of the account at the start of the calculation.
@@ -16,7 +16,7 @@ def calculate_interest(balance, rate, transactions):
       The interest rate to be paid at the end of the month.
 
     Note: Each doc-test has a comment at the start describing the case.
-    
+
     >>> # Simple example.
     >>> interest = calculate_interest(1000, 0.05, [])
     >>> print("%.2f" % interest)
@@ -46,29 +46,21 @@ def calculate_interest(balance, rate, transactions):
     # Daily interest rate, that compounds to the annual rate.
     daily_rate = (1 + rate) ** (1 / days_in_year) - 1
 
-    ############################################################################
+    ###########################################################################
     #
     # TODO: Complete the rest of this function, until the next heading
     # similar to this one
     #
-    ############################################################################
+    ###########################################################################
     return -1
 
-
-
-
-
-
-
-
-    ############################################################################
+    ###########################################################################
     #
     # Your function should end here. You can write or edit code below
     # this point to help you solve the assignment, but it will not be
     # tested nor graded.
     #
-    ############################################################################
-
+    ###########################################################################
 
 
 tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)

@@ -7,7 +7,7 @@ def calculate_interest_differential(balance,
                                     transactions):
     """
     Calculate the compound interest paid monthly on the balance of a
-    bank account.
+    bank account, recursively.
 
     Args:
       balance: Current balance of the account at the start of the calculation.
@@ -19,7 +19,7 @@ def calculate_interest_differential(balance,
       The interest rate to be paid at the end of the month.
 
     Note: Each doc-test has a comment at the start describing the case.
-    
+
     >>> # Simple example.
     >>> i = calculate_interest_differential(1000, 0.02, 0.04, [])
     >>> print("%.2f" % i)
@@ -43,28 +43,21 @@ def calculate_interest_differential(balance,
     40.18
     """
 
-    ############################################################################
+    ###########################################################################
     #
     # TODO: Complete the rest of this function, until the next heading
     # similar to this one
     #
-    ############################################################################
+    ###########################################################################
     return -1
 
-
-
-
-
-
-
-
-    ############################################################################
+    ###########################################################################
     #
     # Your function should end here. You can write or edit code below
     # this point to help you solve the assignment, but it will not be
     # tested nor graded.
     #
-    ############################################################################
+    ###########################################################################
 
 
 tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
