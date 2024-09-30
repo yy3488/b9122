@@ -4,7 +4,7 @@ Out on Sep 30th, due on Tuesday Oct 8th, © 2024 Miguel Morin
 
 This is a group assignment, with groups allocated randomly within sections.
 
-## Exercise 1: Interest rates, recursive (35 points)
+## Exercise 1: Interest rates, recursive (30 points)
 
 This exercise is similar to assignment 1, but now I ask that you write a recursive function and more doc-tests.
 
@@ -20,7 +20,7 @@ Complete the file `compound_interest_differential.py` to compute the interest pa
 
 Submit the file on GradeScope without changing the name.
 
-### 1.3 Diferential interest rates (5 points)
+### 1.3 Diferential interest rates (10 points)
 
 Complete the file `compound_interest_robust.py` to take into account all the possible edge and corner cases you can think of. Write these corner cases as doc-tests, then implement the code that handles those edge cases.
 
@@ -76,9 +76,9 @@ Note: this file has no doc-tests, so I give no indication of where the bug is.
 
 (Hint: visually compare an image from the test data to its nearest neighbor from the training data.)
 
-Submit the file on GradeScope without changing the name.
+Submit the file on GradeScope without changing the name. Also submit at least 5 screenshots of your debugging steps, in PNG format, with names starting with `knn`, for example `knn1.png`, `knn2.png`.
 
-### 3.2 Accuracy (20 points)
+### 3.2 Accuracy (15 points)
 
 The file `knn_accuracy.py` imports the file above (whether or not you found the bug). Complete the function in the file to compute the accuracy of 1-nearest neighbor as an OCR system.
 
@@ -92,7 +92,7 @@ How long did your code take to compute the accuracy? Why do you think the Python
 
 Submit your answer on GradeScope as a text file with `knn3.txt`.
 
-### 3.4 Bonus (5 points)
+### 3.4 Improvements (bonus, 5 points)
 
 Inspect some of the images that the algorithm got wrong. Why did that happen? How could another algorithm solve it?
 
