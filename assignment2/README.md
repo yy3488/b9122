@@ -92,7 +92,7 @@ How long did your code take to compute the accuracy? Why do you think the Python
 
 Submit your answer on GradeScope as a text file with `knn3.txt`.
 
-### 3.4 Bonus (5 points9
+### 3.4 Bonus (5 points)
 
 Inspect some of the images that the algorithm got wrong. Why did that happen? How could another algorithm solve it?
 
