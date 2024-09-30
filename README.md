@@ -85,6 +85,12 @@ then please copy-paste this code in a shell and press ENTER:
 cd; cd b9122; git stash; git pull
 ```
 
+and then run:
+
+``` bash
+python3 -m pip install -r requirements.txt; python3 mark_attendance.py
+```
+
 #### validation
 
 Copy-paste this code in a shell:
