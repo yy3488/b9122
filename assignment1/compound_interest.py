@@ -38,6 +38,9 @@ def calculate_interest(balance, rate, transactions):
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (10, 1000)])
     >>> print("%.2f" % interest)
     8.03
+    >>> # Transactions may happen twice in a day.
+    >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
+    >>> print("%.2f" % interest)
     """
 
     days_in_month = 30  # Assume a 30-day month.

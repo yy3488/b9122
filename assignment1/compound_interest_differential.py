@@ -41,6 +41,9 @@ def calculate_interest_differential(balance,
     >>> i = calculate_interest_differential(10000, 0.02, 0.05, [])
     >>> print("%.2f" % i)
     40.18
+    >>> # Transactions may happen twice in a day.
+    >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
+    >>> print("%.2f" % interest)
     """
 
     ############################################################################

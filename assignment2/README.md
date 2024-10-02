@@ -14,6 +14,8 @@ Please note:
 
 This exercise is similar to assignment 1, but now I ask that you write a recursive function and more doc-tests.
 
+I allow and encourage you to to write a "helper" or "wrapper" function that calls your recursive function. And remember that modules are just files, so you can `import` a function that you defined in a previous question to answer the current question.
+
 ### 1.1 Recursive function (10 points)
 
 Complete the file `compound_interest.py` to compute the interest payment on the account with a recursive function. It's similar to Assignment 1, exercise 1.1, but with a recursive function.
@@ -26,7 +28,7 @@ Complete the file `compound_interest_differential.py` to compute the interest pa
 
 Submit the file on GradeScope without changing the name.
 
-### 1.3 Diferential interest rates (10 points)
+### 1.3 Robustness (10 points)
 
 Complete the file `compound_interest_robust.py` to take into account all the possible edge and corner cases you can think of. Write these corner cases as doc-tests, then implement the code that handles those edge cases.
 
@@ -136,15 +138,27 @@ Submit your answer in plain English (not code) as a text file: `system5.txt`.
 
 #### `ModuleNotFoundError: No module named 'distutils.util'`
 
-OpenCV (CV stands for "Computer Vision") has known issues with Python 3.12. If you are running an earlier version, you should not see this error, so please contact Miguel.
+OpenCV (CV stands for "Computer Vision") has known issues with Python 3.12 on macOS. If you are running an earlier version and you see this error, please contact Miguel.
 
-If you are running Python 3.12, please try on another computer in your group that is running a previous version. Otherwise, you can create a virtual environment with a previous version of Python with Anaconda. Run this command:
+If you are running Python 3.12, you have three solutions:
+
+1. Install OpenCV from a binary instead of from source. After cloning the repository, run this command:
+
+``` bash
+pip install -r requirements.txt --prefer-binary
+```
+
+Note the last flag, which indicates that PIP should not try to install the packages from source, using instead what someone else already built for your system.
+
+2. Try other computers in your group to see if someone happens to be running a previous version.
+
+3. Create a virtual environment with a previous version of Python with Anaconda. Run this command:
 
 ``` bash
 conda create -n "envVideo2pdf" python=3.11 ipython
 ```
 
-If that succeeds, activate the environemnt with:
+If that succeeds, activate the environment with:
 
 ``` bash
 conda activate envVideo2pdf
@@ -152,4 +166,4 @@ conda activate envVideo2pdf
 
 and proceed with the assignment.
 
-If you still have issues, and you are comfortable with cloud computing, you can create a virtual machine on the cloud to handle this task.
+If you are comfortable with cloud computing (AWS, Google Cloud, or IBM Cloud), you can create a virtual machine on the cloud running Python 3.12 on Linux (which does not have these issues) to handle this task.

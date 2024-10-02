@@ -1,5 +1,8 @@
 import doctest
 
+def check_value_with_rounding(value1, value2):
+    return abs(value1 - value2) <= 0.02
+
 
 def calculate_interest(balance, rate, transactions):
     """
@@ -19,25 +22,28 @@ def calculate_interest(balance, rate, transactions):
 
     >>> # Simple example.
     >>> interest = calculate_interest(1000, 0.05, [])
-    >>> print("%.2f" % interest)
-    4.02
+    >>> check_value_with_rounding(4.02, interest)
+    True
     >>> # Same example, in a different way.
     >>> interest = calculate_interest(0, 0.05, [(0, 1000)])
-    >>> print("%.2f" % interest)
-    4.02
+    >>> check_value_with_rounding(4.02, interest)
+    True
     >>> # The interest rate has to compound daily.
     >>> interest = calculate_interest(10000, 0.05, [])
-    >>> print("%.2f" % interest)
-    40.18
+    >>> check_value_with_rounding(40.18, interest)
+    True
     >>> # Example with a list of transactions.
     >>> transactions = [(5, 500), (10, -200), (20, 100)]
     >>> interest = calculate_interest(1000, 0.05, transactions)
-    >>> print("%.2f" % interest)
-    5.29
+    >>> check_value_with_rounding(5.29, interest)
+    True
     >>> # Transactions may not be ordered.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (10, 1000)])
-    >>> print("%.2f" % interest)
+    >>> check_value_with_rounding(8.03, interest)
     8.03
+    >>> # Transactions may happen twice in a day.
+    >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
+    >>> check_value_with_rounding(8.03, interest)
     """
 
     days_in_month = 30  # Assume a 30-day month.
