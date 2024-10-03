@@ -34,7 +34,7 @@ Submit the file on GradeScope without changing the name.
 
 Complete the file `compound_interest_robust.py` to take into account all the possible edge and corner cases you can think of. Write these corner cases as doc-tests, then implement the code that handles those edge cases.
 
-Remember that modules are just files, so you can `import` a function that you defined in question 1.1 to answer the current question.
+Remember that modules are just files, so you can `import` a function that you defined in question 1.2 to answer the current question.
 
 Submit the file on GradeScope without changing the name.
 
