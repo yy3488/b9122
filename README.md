@@ -304,13 +304,21 @@ cd; cd b9122; git stash; git pull
 
 After following the steps below to install, here is how to mark attendance.
 
+### Step 3.1: Mark attendance from the shell
+
 Start a shell (`Terminal.app` on macOS, `git bash` on Windows) and run this command:
 
 ```bash
 cd; cd b9122; git pull; python3 -m pip install -r requirements.txt; python mark_attendance.py
 ```
 
-It seems that VS Code does not work with my software. Please run from the shell instead.
+### Step 3.2: Run from PyCharm (or another IDE)
+
+Start your favorite Integrated Development Environment (IDE), such as PyCharm. Open the file `b9122.py` in the IDE. Normally, this file is at `$HOME/b9122/b9122.py`, i.e. in the `b9122` folder that inside your Home folder (the Home folder is the folder one level up from Downloads, Desktop, etc). Run the file.
+
+We only support PyCharm but you are free to run and debug from your own IDE.
+
+For example: you can run from VS Code, but sometimes it does not work with my software, so please run from the shell instead.
 
 ## Notes for Windows users
 
