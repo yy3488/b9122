@@ -57,10 +57,17 @@ def calculate_interest(balance, rate, transactions):
     # TODO: Complete the rest of this function, until the next heading
     # similar to this one
     #
+    # Note: the only thing this function should do is call the
+    # recursive function with the right parameters. That's why it's
+    # called a "wrapper" or "helper" function: it wraps around the
+    # recursive function, and helps you call it with the right
+    # parameters.
+    #
     ###########################################################################
 
-    # Note: this function should call the recursive function below.
-    return -1
+    return calculate_interest_recursive(
+        # TODO: complete this
+    )
 
     ###########################################################################
     #
