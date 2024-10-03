@@ -16,9 +16,11 @@ This exercise is similar to assignment 1, but now I ask that you write a recursi
 
 ### 1.1 Recursive function (10 points)
 
-Complete the file `compound_interest_recursive.py` to compute the interest payment on the account with a recursive function. It's similar to Assignment 1, exercise 1.1, but with a recursive function.
+Complete the file `compound_interest.py` to compute the interest payment on the account with a recursive function. It's similar to Assignment 1, exercise 1.1, but with a recursive function.
 
 Also complete the `calculate_interest()` function to call your recursive function. This is called a "helper" or "wrapper" function.
+
+Note: you should NOT import the function you wrote for Assignment 1. You have to define a brand new function, from scratch.
 
 Submit the file on GradeScope without changing the name.
 
