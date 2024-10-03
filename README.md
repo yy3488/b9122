@@ -56,7 +56,7 @@ Receiving objects: 100% (64/64), 9.39 KiB | 1.88 MiB/s, done.
 Resolving deltas: 100% (34/34), done.
 ```
 
-##### Common error 1
+#### Common error 1
 
 If you get an error that the repository already exists:
 
@@ -72,7 +72,7 @@ cd; git clone https://github.com/mm3509/b9122
 if [ -d ~/b9122_backup ]; then mv ~/b9122_backup/\.*.txt ~/b9122/; rm -rf b9122_backup; fi
 ```
 
-##### Common error 2
+#### Common error 2
 
 ``` bash
 Please commit your changes or stash them
@@ -89,6 +89,20 @@ and then run:
 
 ``` bash
 python3 -m pip install -r requirements.txt; python3 mark_attendance.py
+```
+
+#### Common error 3
+
+On macOS, if you get this error:
+
+```
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+```
+
+then install XCode command-line tools again with this command:
+
+```
+xcode-select --install
 ```
 
 #### validation

@@ -14,11 +14,11 @@ Please note:
 
 This exercise is similar to assignment 1, but now I ask that you write a recursive function and more doc-tests.
 
-I allow and encourage you to to write a "helper" or "wrapper" function that calls your recursive function. And remember that modules are just files, so you can `import` a function that you defined in a previous question to answer the current question.
-
 ### 1.1 Recursive function (10 points)
 
-Complete the file `compound_interest.py` to compute the interest payment on the account with a recursive function. It's similar to Assignment 1, exercise 1.1, but with a recursive function.
+Complete the file `compound_interest_recursive.py` to compute the interest payment on the account with a recursive function. It's similar to Assignment 1, exercise 1.1, but with a recursive function.
+
+Also complete the `calculate_interest()` function to call your recursive function. This is called a "helper" or "wrapper" function.
 
 Submit the file on GradeScope without changing the name.
 
@@ -26,11 +26,15 @@ Submit the file on GradeScope without changing the name.
 
 Complete the file `compound_interest_differential.py` to compute the interest payment on the account, taking into account baseline and bonus interest rates. It's similar to Assignment 1, exercise 1.2, but with a recursive function.
 
+Remember that modules are just files, so you can `import` a function that you defined in question 1.1 to answer the current question.
+
 Submit the file on GradeScope without changing the name.
 
 ### 1.3 Robustness (10 points)
 
 Complete the file `compound_interest_robust.py` to take into account all the possible edge and corner cases you can think of. Write these corner cases as doc-tests, then implement the code that handles those edge cases.
+
+Remember that modules are just files, so you can `import` a function that you defined in question 1.1 to answer the current question.
 
 Submit the file on GradeScope without changing the name.
 

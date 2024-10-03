@@ -58,6 +58,8 @@ def calculate_interest(balance, rate, transactions):
     # similar to this one
     #
     ###########################################################################
+
+    # Note: this function should call the recursive function below.
     return -1
 
     ###########################################################################
@@ -68,7 +70,29 @@ def calculate_interest(balance, rate, transactions):
     #
     ###########################################################################
 
+def calculate_interest_recursive(balance, rate, transactions, days=0):
+    """
+    Recursive inner function.
+    """
+    ###########################################################################
+    #
+    # TODO: Complete the rest of this function, until the next heading
+    # similar to this one. Your recursive function should have the
+    # terminal condition (n = 0 in the factorial case) and the
+    # recursive call ((n-1)! in the factorial case).
+    #
+    ###########################################################################
+    return -1
 
+    ###########################################################################
+    #
+    # Your function should end here. You can write or edit code below
+    # this point to help you solve the assignment, but it will not be
+    # tested nor graded.
+    #
+    ###########################################################################
+
+    
 tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
 if 0 < tests_run:
     assert 0 == tests_failed, 'Some doc-tests failed, exiting...'

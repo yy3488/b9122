@@ -1,5 +1,19 @@
 import doctest
 
+###########################################################################
+#
+# TODO: Complete this section to import modules, until the next
+# heading similar to this one
+#
+###########################################################################
+return -1
+
+###########################################################################
+#
+# Your imports should end here.
+#
+###########################################################################
+
 
 def calculate_interest_differential(balance,
                                     baseline_rate,
