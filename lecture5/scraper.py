@@ -13,7 +13,7 @@ DEBUG = False
 def dump(html):
     fp = os.path.join(os.path.expanduser("~"),
                       "Downloads",
-                      "lecture4_debug.html"
+                      "scraper_debug.html"
                       )
     with open(fp, "w+") as f:
         f.write(html)
@@ -88,4 +88,4 @@ if "__main__" == __name__:
             subprocess.check_output("open " + URL, shell=True)
 
 # Include this into crontab to run every day at 2.30pm with:
-# cat <(crontab -l) <(echo "30 14 * * * python $HOME/b9122/lecture4/scraper.py") | crontab -
+# cat <(crontab -l) <(echo "0 12 * * * python $HOME/b9122/lecture5/scraper.py") | crontab -
