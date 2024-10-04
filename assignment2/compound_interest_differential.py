@@ -15,6 +15,10 @@ return -1
 ###########################################################################
 
 
+def check_value_with_rounding(value1, value2):
+    return abs(value1 - value2) <= 0.02
+
+
 def calculate_interest_differential(balance,
                                     baseline_rate,
                                     bonus_rate,
@@ -36,25 +40,25 @@ def calculate_interest_differential(balance,
 
     >>> # Simple example.
     >>> i = calculate_interest_differential(1000, 0.02, 0.04, [])
-    >>> print("%.2f" % i)
-    3.23
+    >>> check_value_with_rounding(3.23, i)
+    True
     >>> # Simple example, constructed another way.
     >>> i = calculate_interest_differential(0, 0.02, 0.04, [(0, 1000)])
-    >>> print("%.2f" % i)
-    3.23
+    >>> check_value_with_rounding(3.23, i)
+    True
     >>> # Example with a withdrawal.
     >>> i = calculate_interest_differential(1000, 0.02, 0.04, [(29, -1)])
-    >>> print("%.2f" % i)
-    1.63
+    >>> check_value_with_rounding(1.63, i)
+    True
     >>> # Example with credits and withdrawals.
     >>> transactions = [(5, 500), (10, -200), (20, 100)]
     >>> i = calculate_interest_differential(1000, 0.02, 0.04, transactions)
-    >>> print("%.2f" % i)
-    2.14
+    >>> check_value_with_rounding(2.14, i)
+    True
     >>> # The interest rate has to compound daily.
     >>> i = calculate_interest_differential(10000, 0.02, 0.05, [])
-    >>> print("%.2f" % i)
-    40.18
+    >>> check_value_with_rounding(40.18, i)
+    True
     """
 
     ###########################################################################

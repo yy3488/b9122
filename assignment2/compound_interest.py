@@ -40,10 +40,11 @@ def calculate_interest(balance, rate, transactions):
     >>> # Transactions may not be ordered.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (10, 1000)])
     >>> check_value_with_rounding(8.03, interest)
-    8.03
+    True
     >>> # Transactions may happen twice in a day.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
     >>> check_value_with_rounding(8.03, interest)
+    True
     """
 
     days_in_month = 30  # Assume a 30-day month.
