@@ -49,6 +49,10 @@ def calculate_interest(balance, rate, transactions):
     >>> interest = calculate_interest(1000, 0.05, [(10, 1000), (20, 1000), (10, 1000)])
     >>> check_value_with_rounding(8.03, interest)
     True
+    >>> # Another check for illustration of git merge.
+    >>> interest = calculate_interest(1000, 0.05, [(10, 1000), (20, 1000), (10, 1000)])
+    >>> check_value_with_rounding(8.03, interest)
+    True
     """
 
     days_in_month = 30  # Assume a 30-day month.
