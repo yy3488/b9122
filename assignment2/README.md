@@ -118,6 +118,14 @@ echo 'export PATH="/usr/local/opt/python/libexec/bin:$PATH"' >> ~/.profile
 source ~/.profile
 ```
 
+You may get a warning that you need to add brew to your PATH. Please follow the steps in the "Next steps" section to get brew running. You succeed if you run:
+
+``` bash
+which brew
+```
+
+and you see something like this: `/usr/local/bin/brew`.
+
 and then install `qpdf` with:
 
 ``` bash
