@@ -1,8 +1,12 @@
 import doctest
 
+from ex2 import check_value_with_rounding
+
 
 def calculate_interest(balance, rate, transactions):
     """
+    Almost DRY solution from a student.
+    
     Calculate the compound interest paid monthly on the balance of
     a bank account.
 
@@ -19,59 +23,46 @@ def calculate_interest(balance, rate, transactions):
     
     >>> # Simple example.
     >>> interest = calculate_interest(1000, 0.05, [])
-    >>> print("%.2f" % interest)
-    4.02
+    >>> check_value_with_rounding(4.02, interest)
+    True
     >>> # Same example, in a different way.
     >>> interest = calculate_interest(0, 0.05, [(0, 1000)])
-    >>> print("%.2f" % interest)
-    4.02
+    >>> check_value_with_rounding(4.02, interest)
+    True
     >>> # The interest rate has to compound daily.
     >>> interest = calculate_interest(10000, 0.05, [])
-    >>> print("%.2f" % interest)
-    40.18
+    >>> check_value_with_rounding(40.18, interest)
+    True
     >>> # Example with a list of transactions.
     >>> transactions = [(5, 500), (10, -200), (20, 100)]
     >>> interest = calculate_interest(1000, 0.05, transactions)
-    >>> print("%.2f" % interest)
-    5.29
+    >>> check_value_with_rounding(5.29, interest)
+    True
     >>> # Transactions may not be ordered.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (10, 1000)])
-    >>> print("%.2f" % interest)
-    8.03
+    >>> check_value_with_rounding(8.03, interest)
+    True
     >>> # Transactions may happen twice in a day.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
-    >>> print("%.2f" % interest)
-    6.69
-    """
+    >>> check_value_with_rounding(6.69, interest)
+    True
+     """
 
-    days_in_month = 30  # Assume a 30-day month.
-    days_in_year = 365  # Assume a normal year.
+    days_in_month = 30
+    days_in_year = 365
 
-    # Daily interest rate, that compounds to the annual rate.
     daily_rate = (1 + rate) ** (1 / days_in_year) - 1
 
-    ############################################################################
-    #
-    # TODO: Complete the rest of this function, until the next heading
-    # similar to this one
-    #
-    ############################################################################
-    return -1
+    interest = 0
 
+    for day in range(days_in_month):
+        for i in range(len(transactions)):
+            if transactions[i][0] == day:
+                balance += transactions[i][1]
 
+        interest += (balance + interest) * daily_rate
 
-
-
-
-
-
-    ############################################################################
-    #
-    # Your function should end here. You can write or edit code below
-    # this point to help you solve the assignment, but it will not be
-    # tested nor graded.
-    #
-    ############################################################################
+    return interest
 
 
 

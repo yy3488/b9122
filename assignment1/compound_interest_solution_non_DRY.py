@@ -1,8 +1,12 @@
 import doctest
 
+from ex2 import check_value_with_rounding
+
 
 def calculate_interest(balance, rate, transactions):
     """
+    WET / non-DRY solution from a student.
+
     Calculate the compound interest paid monthly on the balance of
     a bank account.
 
@@ -19,61 +23,64 @@ def calculate_interest(balance, rate, transactions):
     
     >>> # Simple example.
     >>> interest = calculate_interest(1000, 0.05, [])
-    >>> print("%.2f" % interest)
-    4.02
+    >>> check_value_with_rounding(4.02, interest)
+    True
     >>> # Same example, in a different way.
     >>> interest = calculate_interest(0, 0.05, [(0, 1000)])
-    >>> print("%.2f" % interest)
-    4.02
+    >>> check_value_with_rounding(4.02, interest)
+    True
     >>> # The interest rate has to compound daily.
     >>> interest = calculate_interest(10000, 0.05, [])
-    >>> print("%.2f" % interest)
-    40.18
+    >>> check_value_with_rounding(40.18, interest)
+    True
     >>> # Example with a list of transactions.
     >>> transactions = [(5, 500), (10, -200), (20, 100)]
     >>> interest = calculate_interest(1000, 0.05, transactions)
-    >>> print("%.2f" % interest)
-    5.29
+    >>> check_value_with_rounding(5.29, interest)
+    True
     >>> # Transactions may not be ordered.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (10, 1000)])
-    >>> print("%.2f" % interest)
-    8.03
+    >>> check_value_with_rounding(8.03, interest)
+    True
     >>> # Transactions may happen twice in a day.
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
-    >>> print("%.2f" % interest)
-    6.69
+    >>> check_value_with_rounding(6.69, interest)
+    True
     """
 
-    days_in_month = 30  # Assume a 30-day month.
-    days_in_year = 365  # Assume a normal year.
-
-    # Daily interest rate, that compounds to the annual rate.
+    # Miguel: I provided these three lines.
+    days_in_month = 30
+    days_in_year = 365
     daily_rate = (1 + rate) ** (1 / days_in_year) - 1
 
-    ############################################################################
-    #
-    # TODO: Complete the rest of this function, until the next heading
-    # similar to this one
-    #
-    ############################################################################
-    return -1
 
+    # Miguel: good, descriptive variable names!
+    interest = 0
+    days_passed = 0
 
+    
+    transactions.sort()
 
+    # Miguel: this conditional contributes to a "christmas tree"
+    # pattern of nested statements.  and is redundant, because a for
+    # loop on an empty list does not run. So the calculation of
+    # interest is WET and not DRY.
+    if len(transactions) > 0:
+        for i in transactions:
 
+            # Miguel: this calculation of interest from individual
+            # cash flows is correct, but hard to read, understand and
+            # debug.
+            interest = interest + ((1 + rate) ** (1 / 365)) ** (i[0] - days_passed) * balance - balance
+            balance = balance + i[1]
+            days_passed = i[0]
+        interest = interest + ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
+    elif len(transactions) == 0:
 
+        # Miguel: this case is WET, repeated from above.
+        interest = ((1 + rate) ** (1 / 365)) ** days_in_month * balance - balance
 
-
-
-    ############################################################################
-    #
-    # Your function should end here. You can write or edit code below
-    # this point to help you solve the assignment, but it will not be
-    # tested nor graded.
-    #
-    ############################################################################
-
-
+    return interest
 
 tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
 if 0 < tests_run:
@@ -86,14 +93,3 @@ if 0 < tests_run:
     print("\n".join(msg))
 else:
     print('Unable to run doc-tests, please see Miguel!')
-
-# Example usage:
-initial_balance = 1000
-annual_rate = 0.05
-
-# Transactions: day 5 deposit 500, day 10 withdraw 200, day 20 deposit 100.
-transactions = [(5, 500), (10, -200), (20, 100)]
-
-interest = calculate_interest(initial_balance, annual_rate, transactions)
-
-print(f"Interest to be paid at the end of the month: ${interest:.2f}")
