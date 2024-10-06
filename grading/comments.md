@@ -5,8 +5,20 @@ Comments are a cost: they are not executed and can become out of date.
 ## academia versus industry
 
 I know that in other classes, you are required to comment every line of your
-code. That may be the case in academia, but it's not the case in industry, and
-so it's not in this class either.
+code.
+
+That may be the case in academia, when you are learning to code. The comments
+are like training wheels and they help you at the beginning. They also help the
+teacher grade your code, to make sure that the code you wrote is what you meant
+to write.
+
+It's not the case in industry, and so it's not the case in this class either. We
+use GradeScope to make sure that write the right code. It's time to remove those
+training wheels.
+
+In industry, where your code has to be read and maintained by other people, not
+just by you. Comments slow down the reading; only add comments when the slowness
+they introduce is more than compensated by the clarity they bring.
 
 ## Google Python Style Guide
 
