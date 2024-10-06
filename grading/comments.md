@@ -1,4 +1,4 @@
-# Guidance on comments
+# Guidance / grading on comments
 
 Comments are a cost: they are not executed and can become out of date.
 

@@ -1,4 +1,4 @@
-# DRY / Don't Repeat Yourself
+# Guidance / grading on DRY / Don't Repeat Yourself
 
 This document explains our human judgment on what constitutes "DRY" code.
 
@@ -28,9 +28,11 @@ and has the same value as this expression, which is "factored":
 
 but the latter is shorter, simpler, easier to read, and less likely to have bugs.
 
-## simple example
+## simple rules-of-thumb
 
-When peforming arithmetic operations to update a variable, use the operators `+=`, `-=` and `*=`.
+### Use augmented assignment operators
+
+When peforming arithmetic operations to update a variable, use the operators `+=`, `-=` and `*=`. These are called **augmented assignment operators** because they combine an operation with an assignment.
 
 That is, the following four arithmetic operations:
 
@@ -51,6 +53,22 @@ d /= 4
 ```
 
 This saves about one third of characters and reading time.
+
+### Use default arguments
+
+To get a range, for example from `0` to `30`, use the default argument for the start, which is zero.
+
+That is, instead of writing:
+
+```
+range(0, 30)
+```
+
+you should write:
+
+```
+range(30)
+```
 
 ## examples from assignment 1
 
