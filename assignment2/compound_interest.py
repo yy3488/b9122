@@ -1,5 +1,6 @@
 import doctest
 
+
 def check_value_with_rounding(value1, value2):
     return abs(value1 - value2) <= 0.02
 
@@ -42,7 +43,8 @@ def calculate_interest(balance, rate, transactions):
     >>> check_value_with_rounding(8.03, interest)
     True
     >>> # Transactions may happen twice in a day.
-    >>> interest = calculate_interest(1000, 0.05, [(20, 500), (20, 500), (10, 1000)])
+    >>> transactions =  [(20, 500), (20, 500), (10, 1000)]
+    >>> interest = calculate_interest(1000, 0.05, transactions)
     >>> check_value_with_rounding(8.03, interest)
     True
     """
@@ -66,7 +68,7 @@ def calculate_interest(balance, rate, transactions):
     #
     ###########################################################################
 
-    return calculate_interest_recursive(
+    return calculate_balance_recursive(
         # TODO: complete this
     )
 
@@ -78,7 +80,8 @@ def calculate_interest(balance, rate, transactions):
     #
     ###########################################################################
 
-def calculate_interest_recursive(balance, rate, transactions, days=0):
+
+def calculate_balance_recursive(balance, rate, transactions, current_day=0):
     """
     Recursive inner function.
     """

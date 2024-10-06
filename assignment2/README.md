@@ -34,7 +34,10 @@ Submit the file on GradeScope without changing the name.
 
 ### 1.3 Robustness (10 points)
 
-Complete the file `compound_interest_robust.py` to take into account all the possible edge and corner cases you can think of. Write these corner cases as doc-tests, then implement the code that handles those edge cases.
+Complete the file `compound_interest_differential_robust.py` to take
+into account all the possible edge and corner cases you can think
+of. Write these corner cases as doc-tests, then implement the code
+that handles those edge cases.
 
 Remember that modules are just files, so you can `import` a function that you defined in question 1.2 to answer the current question.
 
@@ -92,7 +95,7 @@ Save the output from the shell as a text file and submit it on GradeScope as `sy
 
 I created a video file with the first 3 minutes of lecture 1 [here](https://www.dropbox.com/scl/fi/k97fjziyv60vs0f88aw0y/lecture_1_slides.mp4?rlkey=5r7sb7ddvkv7249mlzkdy49sf&st=b54y5gf3&dl=0). Download this video file (6 MB).
 
-Use the installation from the previous step and run the tool on this file. Your output should contain 3 images, around 1 slide per minute.
+Use the installation from the previous step and run the tool on this file. Your output should contain between 3 and 6 images. I get 3 images when I run on my computer, the TAs got 5 images, you may get a different number and that is OK. Make sure your initial code captures all three slides at the start.
 
 Submit these images on GradeScope without changing their name.
 
@@ -100,9 +103,11 @@ Submit these images on GradeScope without changing their name.
 
 Sometimes, a video file has both the slides and a camera recording. In this case, the algorithm needs adjustment in order to detect the change in slides that is not from the change in the person's face.
 
-I mixed the recording of the slides with the recording of the camera (if you're curious, I used FFMPEG: a cross-platform video editor that works from the shell!). Download this video file [here](https://www.dropbox.com/scl/fi/vol37jiyaogtzm36aiwlg/lecture_1_camera.mp4?rlkey=ahbqvy0stcmqhz2wo6e2mbzwh&st=m7hfdr5c&dl=0). If you run the tool on this file, it will save 6 images when there are only 3 slides: it confuses the change in the camera recording as a possible change of slide.
+I mixed the recording of the slides with the recording of the camera (if you're curious, I used FFMPEG: a cross-platform video editor that works from the shell!). Download this video file [here](https://www.dropbox.com/scl/fi/vol37jiyaogtzm36aiwlg/lecture_1_camera.mp4?rlkey=ahbqvy0stcmqhz2wo6e2mbzwh&st=m7hfdr5c&dl=0). If you run the tool on this file, it will save around 6 images when there are only 3 slides: it confuses the change in the camera recording as a possible change of slide.
 
-Find the place in the source code where you can adjust the settings to ignore movement from the camera. Run the tool to extract the slides into image files. Check the files to confirm that you are not missing any slides. Your output should contain the same number of images, 3 of them, and the same slides.
+Find the place in the source code where you can adjust the settings to ignore movement from the camera. Run the tool to extract the slides into image files. Check the files to confirm that you are not missing any slides. Your output should now contain a lower number of images with the camera (for example, on my computer it started at 6 and I got it down to 3). Your output should contain still contain all 3 slides.
+
+Submit the edited file on Gradescope without changing its name: `video2pdfslides.py`.
 
 Submit those files on GradeScope without changing their name.
 
@@ -110,7 +115,7 @@ Submit those files on GradeScope without changing their name.
 
 If you install an additional tool, `qpdf`, then you can convert these images into a PDF.
 
-Install the tool. On macOS, if you don't have `brew` installed, you can install brew with:
+Install the tool. On macOS, if you don't have `brew` installed, you can install it with:
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -150,7 +155,7 @@ Submit your answer in plain English (not code) as a text file: `system5.txt`.
 
 ### Common issues
 
-#### `ModuleNotFoundError: No module named 'distutils.util'`
+#### `ModuleNotFoundError: No module named 'distutils.util'` or `error: subprocess-exited-with-error`
 
 OpenCV (CV stands for "Computer Vision") has known issues with Python 3.12 on macOS. If you are running an earlier version and you see this error, please contact Miguel.
 
