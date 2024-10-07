@@ -4,23 +4,45 @@ After discussing with students in Office Hours, I have decided to support only o
 
 ## installation steps
 
-1. Step 1: Please download PyCharm from [here](https://www.jetbrains.com/pycharm/download/) and run it (accept terms and conditions and stay with all default settings).
+### Step 1: download
 
-2. Step 2: Optionally, you can get a license for education from [here](https://www.jetbrains.com/community/education/#students/), or you can wait for the end of the 30-day free trial.
+Please download PyCharm from [here](https://www.jetbrains.com/pycharm/download/) and run it (accept terms and conditions and stay with all default settings).
 
-3. Step 3: Open PyCharm, open a new project (call it "B9122", for example).
+### Step 2 (optional): get a license
 
-4. Step 4: On Windows, you have to tell PyCharm where to find Python (similar to how you connected Git Bash to Anaconda Python). On MacOS, PyCharm automatically detects installed Python, if it doesn't, do steps 4.1 and 4.2.
+Optionally, you can get a license for education from [here](https://www.jetbrains.com/community/education/#students/), or you can wait for the end of the 30-day free trial.
 
-_Step 4.1 on macOS_: start a new shell and run:
+### Step 3: new project
+
+Open PyCharm, open a new project (call it "B9122", for example).
+
+### Step 4: connect PyCharm to Anaconda Python
+
+Even if PyCharm detects Python, make sure that it's connected to **Anaconda Python** and not to system Python.
+
+#### Step 4.1 on macOS
+
+Start a new shell. You should see `(base)` in it. If not check that you have conda:
+
+```
+which conda
+```
+
+If you have Conda, but do not see `(base)` when you start a shell, you'll have to run `conda activate` every time you start a shell. You can follow the installation steps again so that your shell activates conda every time.
+
+If you don't have Conda, please install it, then try this again.
+
+In a shell that shows `(base)`, run this:
 
 ```
 which python
 ```
 
-Copy that path to the clipboard, and got to Step 4.2
+Copy that path to the clipboard, and go to Step 4.2
 
-_Step 4.1 on Windows_: start an **Anaconda Command Shell**, and type:
+#### Step 4.1 on Windows
+
+Start an **Anaconda Command Shell** (not git bash, or CMD, or PowerShell), and type:
 
 ``` python
 where python
@@ -28,7 +50,9 @@ where python
 
 Copy the path you get from there.
 
-_Step 4.2_: Open PyCharm. You should see "Configure Python Interpreter" at the top right, then on "Add New Interpreter", then on "Add Local Interpreter". In Environment, "New" is selected, but click on "Existing". Click on the three dots at the right. Paste the path you got from Anaconda Command Shell. Click OK, then OK.
+#### Step 4.2: configure Python interpreter
+
+Open PyCharm. You should see "Configure Python Interpreter" at the top right, then on "Add New Interpreter", then on "Add Local Interpreter". In Environment, "New" is selected, but click on "Existing". Click on the three dots at the right. Paste the path you got from Anaconda Command Shell. Click OK, then OK.
 
 You succeeded if you no longer see "Configure Python Interpreter".
 
