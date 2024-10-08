@@ -43,3 +43,43 @@ This indicates that the source of the error:
 - the machine-readable error has code F821 (and you can read about it at    https://www.flake8rules.com/rules/F821.html )
 
 - the human-readable error means that one variable name is not defined (in this case, it's a typo and has an extra `h` at the end)
+
+## function length
+
+For assignment 2 and the midterm, we expect functions to be under 40 lines (this feature is not yet on Autograder).
+
+A statement that runs over multiple lines counts as one line, for example this long function call:
+
+```python
+return some_recursive_function(balance,
+                               base_rate,
+                               bonus_rate,
+                               transactions,
+                               recursive_counter + 1)
+```
+
+The treatment of edge cases that raise errors do not count as line length.
+
+The treatment of edge cases that do raise errors are part of the function's logic and count towards function length.
+
+## ternary operators
+
+We encourage you to use ternary operators, which condense the code. The following three examples are equivalent, but they get shorter:
+
+```python
+if a <= 0:
+    b = "positive_or_zero"
+else:
+    b = "negative"
+```
+
+```python
+b = "positive_or_zero"
+if a < 0:
+    b = "negative"
+```
+
+```python
+b = "positive_or_zero" if a >= 0 else "negative"
+```
+
