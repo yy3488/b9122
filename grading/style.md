@@ -64,7 +64,9 @@ The treatment of edge cases that do raise errors are part of the function's logi
 
 ## ternary operators
 
-We encourage you to use ternary operators, which condense the code. The following three examples are equivalent, but they get shorter:
+We encourage you to use ternary operators to make functions shorter. These operators condense the code and are still readable. The following three examples are equivalent, but they get shorter.
+
+Here is a typical conditional:
 
 ```python
 if a <= 0:
@@ -73,11 +75,15 @@ else:
     b = "negative"
 ```
 
+Here is the same result, but we initialize a variable at a default value:
+
 ```python
 b = "positive_or_zero"
 if a < 0:
     b = "negative"
 ```
+
+And her is the same result with a "ternary" operator ("ternary" because it uses three arguments: `"positive_or_zero"`, the boolean `a >= 0`, and `"negative"`):
 
 ```python
 b = "positive_or_zero" if a >= 0 else "negative"
