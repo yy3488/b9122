@@ -109,6 +109,6 @@ Here is quote from Hoare:
 
 Our goal for this course is for you to write the former.
 
-The code is easy to read and understand; variable, function and object names are appropriate and convey meaning; functions are clear in what they do; they follow the “happy path”. The code is so clear in what it does that there are obviously no bugs. 
+Here is the standard we will apply for assignment 5 and the final, quoted from the syllabus
 
-
+> The code is easy to read and understand; variable, function and object names are appropriate and convey meaning; functions are clear in what they do; they follow the “happy path”. The code is so clear in what it does that there are obviously no bugs. 
