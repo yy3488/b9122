@@ -16,13 +16,13 @@ The concept of "refactoring" in programming is similar to "factoring" in math.
 
 This expression is called "distributed":
 
-```
+```python
 a + a + a + a + a
 ```
 
 and has the same value as this expression, which is "factored":
 
-```
+```python
 5 * a
 ```
 
@@ -36,7 +36,7 @@ When peforming arithmetic operations to update a variable, use the operators `+=
 
 That is, the following four arithmetic operations:
 
-```
+```python
 a = a + 1
 b = b - 2
 c = c * 3
@@ -45,7 +45,7 @@ d = d / 4
 
 are the same as, and should be replaced by:
 
-```
+```python
 a += 1
 b -= 2
 c *= 3
@@ -60,7 +60,7 @@ To get a range, for example from `0` to `30`, use the default argument for the s
 
 That is, instead of writing:
 
-```
+```python
 range(0, 30)
 ```
 
@@ -72,15 +72,15 @@ range(30)
 
 ### do not use re-assignment when an in-place function would do
 
-To sort a list, you could use this:
+To sort a list, you could use this code:
 
-```
+```python
 transactions = sorted(transactions)
 ```
 
 but the following in-place function is shorter and does not repeat the variable name:
 
-```
+```python
 transactions.sort()
 ```
 
@@ -90,7 +90,7 @@ transactions.sort()
 
 Here is an example of WET code:
 
-```
+```python
 interest = 0
 days_passed = 0
 if len(transactions) > 0:
@@ -105,7 +105,7 @@ elif len(transactions) == 0:
 
 In the case of no transactions, `days_passed = 0`, so the last line and the third-to-last line are the same and should be "refactored", which eliminates three lines of code (or 30% of the original lines):
 
-```
+```python
 interest = 0
 days_passed = 0
 for i in transactions:
@@ -117,7 +117,7 @@ interest = interest + ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed)
 
 Furthermore, the two lines starting with `interest = interest + ...` can be refactored with an augmented assignment operator: `interest += ...`, and the long formula to compute the interest is also repeated and should be refactored into a function, for example:
 
-```
+```python
 DAYS_IN_YEAR = 365
 
 def compute_interest_over_period(balance, rate, num_days):
@@ -137,7 +137,7 @@ interest += compute_interest_over_period(balance, rate, days_in_month - days_pas
 
 Here is an example of WET code: 
 
-```
+```python
 def calculate_interest_differential(balance,
                                     baseline_rate,
                                     bonus_rate,
@@ -168,7 +168,7 @@ Notice that, if the baseline rate applies, the formula for it is inside two inde
 Instead, DRY code uses the function defined in the above exercise. A Python file is a module and you can import it!
 
 
-```
+```python
 from compound_interest_solution_DRY import calculate_interest
 
 def calculate_interest_differential(balance,

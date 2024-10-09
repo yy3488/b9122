@@ -49,7 +49,7 @@ Standards for assignment 2 and the midterm are still loose. I will tighten them 
 
 Here is an example submission from assignment 1:
 
-```
+```python
 def calculate_interest(balance, rate, transactions):
 
     days_in_month = 30
@@ -68,7 +68,7 @@ The element `i` in the transaction list is used three times. I find it hard to r
 
 A better choice of variable names makes the code easier to read and less prone to bugs.
 
-```
+```python
 def calculate_interest(balance, rate, transactions):
 
     days_in_month = 30
@@ -86,7 +86,7 @@ def calculate_interest(balance, rate, transactions):
 
 An even better solution is to make use of "tuple unpacking", so we iterate through the transactions list and assign these variable names in one line instead of three:
 
-```
+```python
 def calculate_interest(balance, rate, transactions):
 
     days_in_month = 30
