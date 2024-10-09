@@ -70,6 +70,20 @@ you should write:
 range(30)
 ```
 
+### do not use re-assignment when an in-place function would do
+
+To sort a list, you could use this:
+
+```
+transactions = sorted(transactions)
+```
+
+but the following in-place function is shorter and does not repeat the variable name:
+
+```
+transactions.sort()
+```
+
 ## examples from assignment 1
 
 ### exercise 1.1
@@ -86,7 +100,7 @@ if len(transactions) > 0:
         days_passed = i[0]
     interest += ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
 elif len(transactions) == 0:
-    interest += ((1 + rate) ** (1 / 365)) ** days_in_month * balance - balance
+    interest = interest + ((1 + rate) ** (1 / 365)) ** days_in_month * balance - balance
 ```
 
 In the case of no transactions, `days_passed = 0`, so the last line and the third-to-last line are the same and should be "refactored", which eliminates three lines of code (or 30% of the original lines):
@@ -98,7 +112,25 @@ for i in transactions:
     interest = interest + ((1 + rate) ** (1 / 365)) ** (i[0] - days_passed) * balance - balance
     balance = balance + i[1]
     days_passed = i[0]
-interest += ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
+interest = interest + ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
+```
+
+Furthermore, the two lines starting with `interest = interest + ...` can be refactored with an augmented assignment operator: `interest += ...`, and the long formula to compute the interest is also repeated and should be refactored into a function, for example:
+
+```
+DAYS_IN_YEAR = 365
+
+def compute_interest_over_period(balance, rate, num_days):
+    return (((1 + rate) ** (1 / DAYS_IN_YEAR)) ** num_days - 1) * balance
+
+
+interest = 0
+days_passed = 0
+for i in transactions:
+    interest += compute_interest_over_period(balance, rate, i[0] - days_passed)
+    balance = balance + i[1]
+    days_passed = i[0]
+interest += compute_interest_over_period(balance, rate, days_in_month - days_passed)
 ```
 
 ### exercise 1.2
