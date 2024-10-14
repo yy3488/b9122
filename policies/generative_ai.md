@@ -2,7 +2,7 @@
 
 This version: October 14th, 2024.
 
-This guide contains my policy on academic integrity. You'll have to read and pledge to abide by this policy to gain access to assignments and exams.
+This guide contains my policy on generative AI. You'll have to read and pledge to abide by this policy to gain access to assignments and exams.
 
 If you do use generative AI in the allowed cases, you should attribute credit in  a comment, e.g. `# generative AI helped me with this`. I will ignore these comments when computing your allowed share of comments.
 
