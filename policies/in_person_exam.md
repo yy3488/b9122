@@ -26,7 +26,7 @@ Violating the guidelines in this document is forbidden, violates the [CBS Honor 
 
 - Ask us for help if you need it.
 
-- Submit your solutions before the deadline. The submission will close automatically at the deadline and we will not accept late submissions.
+- Submit your solutions to Gradescope (not Canvas) before the deadline. Gradescope will close automatically at the deadline and we will not accept late submissions.
 
 ## penalties
 
