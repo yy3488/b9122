@@ -62,23 +62,3 @@ def kNN(x, k, data, label):
     # Find the most frequent class among the first k data points.
     classes, freq = np.unique(label[argsorted[:k]], return_counts=True)
     return classes[np.argmax(freq)]
-
-
-def find_missed_images():
-    """
-    Find images that the kNN algorithm misses, maybe because of a
-    bug.
-    """
-
-    missed = []
-    for i in range(len(test_y)):
-        x = test_X[i]
-        label = test_y[i]
-
-        prediction, nearest = kNN1(x, train_X, train_y)
-        if prediction != label:
-            print(i)
-            missed.append(str(i))
-
-            with open("debugged_images.txt", 'w+') as f:
-                f.write("\n".join(missed))
