@@ -10,7 +10,7 @@ Violating the guidelines in this document is forbidden, violates the [CBS Honor 
 
 - Install Proctorio and test it with the Test Exam on Canvas.
 
-- Read the new policies on academic integrity and generative AI.
+- Read the new policies on academic integrity, generative AI, and the in-person exam.
 
 ## Before entering the exam room
 
