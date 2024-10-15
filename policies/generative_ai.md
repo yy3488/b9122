@@ -2,6 +2,10 @@
 
 Addition on October 15th: generative AI is allowed only on certain use cases, and only in assignments and take-home exams. Generative AI is not allowed in in-person exams under any circumstances.
 
+Addition on October 15th (afternoon): you cannot use Google Search, as it provides AI suggestions in the answers, either in in-person or take-home exams. You have to use the DuckDuckGo.com search engine.
+
+Addition on October 15th (afternoon): if you use PyCharm, you have to disable AI code completion (see detailed instructions below).
+
 This version: October 15th, 2024.
 
 This guide contains my policy on generative AI. You'll have to read and pledge to abide by this policy to gain access to assignments and exams.
@@ -9,6 +13,10 @@ This guide contains my policy on generative AI. You'll have to read and pledge t
 If you do use generative AI in the allowed cases, you should attribute credit in  a comment, e.g. `# generative AI helped me with this`. I will ignore these comments when computing your allowed share of comments.
 
 Using generative AI outside of the explicitly allowed use cases is forbidden, violates the [CBS Honor Code](https://students.business.columbia.edu/office-of-student-affairs/academic-advising-and-student-success/academic-integrity), and I will report suspected instances. Please contact me if you have any questions about this policy.
+
+## Penalties: 50% of your grade
+
+If your submission is flagged for violation of this policy and our assessment concludes that you violated it, it will cost you up to **50 points**, or 50% of the grade on the assignment or exam, whichever is larger.
 
 ## Rationale for this policy
 
@@ -24,19 +32,33 @@ You must not use generative AI during in-person exams, under any circumstances.
 
 The rest of this document concerns the use of AI in the other assessments, such as assignments and take-home exams.
 
+## You cannot use Google Search or AI search engines, either in in-person or take-home exams
+
+You **cannot use Google Search**. Google rolled out "AI search labs overview", which answers some searches with AI and is against the AI policy.
+
+You **cannot use AI search engines** such as Perplexity AI. These are the same as asking generative AI a question.
+
+Instead, you have to use the **DuckDuckGo.com** search engine, which does not have AI suggestions.  It gives the same results as Google for all your queries.
+
 ## You cannot copy-paste code from AI
 
 You must not ask generative AI to write code for you and you must not copy-paste code from generative AI into your submission.
 
-## You cannot use AI search engines
-
-You are not allowed to use AI search engines such as Perplexity AI. These are the same as asking generative AI a question.
-
-You are allowed to use "plain" Google searches, i.e. those you would do before 2022, as it does not integrate AI into its answers.
-
 ## You cannot use AI code completion
 
 You are not allowed to make use of AI code completion. Some IDEs (Integrated Development Environments) use AI for code completion. For example, VS Code uses Copilot and Google Colab uses Gemini. If your IDE has this, you should turn it off.
+
+On PyCharm, disable AI code completion by visiting the Preferences (Command-, on macOS), searching for completion on the top left search bar, and unchecking these two boxes:
+
+- under "Code completion", disable "Sort completion suggestions based on machine learning"
+
+- under "Inline completion", disable "Enable local Full Line completion suggestions"
+
+See these pictures:
+
+![](../images/pycharm1.png)
+
+![](../images/pycharm2.png)
 
 ## You can use automatic (non-AI) code completion
 
@@ -89,8 +111,6 @@ Some of our methods are:
 - an inspection of your search history on generative AI to understand what happened.
 
 - referral to the Office of Student Affairs for further investigation.
-
-If such an assessment concludes that you violated this policy, it will cost you up to 50 points, or 50% of the grade on the assignment or exam.
 
 Even if somehow you escape detection on the assignments, violating this policy will be a recipe for disaster on the exams, where I will ask questions that generative AI cannot solve.
 
