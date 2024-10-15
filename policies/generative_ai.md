@@ -1,6 +1,8 @@
 # Generative AI policy
 
-This version: October 14th, 2024.
+Addition on October 15th: generative AI is allowed only on certain use cases, and only in assignments and take-home exams. Generative AI is not allowed in in-person exams under any circumstances.
+
+This version: October 15th, 2024.
 
 This guide contains my policy on generative AI. You'll have to read and pledge to abide by this policy to gain access to assignments and exams.
 
@@ -15,6 +17,12 @@ The rationale for this strict policy is that I have seen several students use co
 I expect you to own and be responsible for all the code you submit. I will hold you accountable to all your submissions and you are not allowed to use the excuse "generative AI told me to do it."
 
 If you do use generative AI, I encourage you to save it in your chat history, so that in the case of an anomaly detection, you can prove that you used it within the confines of this guide.
+
+## You cannot use AI in in-person exams
+
+You must not use generative AI during in-person exams, under any circumstances.
+
+The rest of this document concerns the use of AI in the other assessments, such as assignments and take-home exams.
 
 ## You cannot copy-paste code from AI
 
