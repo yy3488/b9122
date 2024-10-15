@@ -29,6 +29,10 @@ def image_show(data):
 def distance(x, y):
     """Euclidean distance.
     """
+    # The bug was here! The original type is numpy.uint8, so it causes
+    # an overflow.  For example, 255 + 1 = 0 (like a clock, where
+    # 23:59 + 00:01 = 00:00), and 0 - 255 = 1. So convert to integer
+    # with 32 bits to avoid the overflow.
     return np.sum(np.square(x.astype(np.uint32) - y.astype(np.uint32)))
 
 
