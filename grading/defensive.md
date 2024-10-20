@@ -33,6 +33,4 @@ The best practice when checking arguments is to raise a `ValueError`. Here is a 
 
 > raise a `ValueError` to indicate a programming mistake like a violated precondition, such as may happen when validating function arguments.
 
-See also [this thread on StackOverflow](https://stackoverflow.com/questions/256222/which-exception-should-i-raise-on-bad-illegal-argument-combinations-in-python) about it.
-
-In any case, as of October 19th, 2024, Autograder will also accept if you raise a `TypeError` around corner cases.
+[This thread on StackOverflow](https://stackoverflow.com/questions/256222/which-exception-should-i-raise-on-bad-illegal-argument-combinations-in-python) has a divided opinion on using `ValueError` or `TypeError`. Therefore, as of October 19th, 2024, Autograder will accept both `ValueError` and `TypeError` around corner cases.
