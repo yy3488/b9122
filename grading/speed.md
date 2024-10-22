@@ -138,4 +138,4 @@ print(round(milliseconds, 3), "ms")
 
 The code is 6% faster with this improvement.
 
-The improvement is more dramatic in a recursion with a list of size `N` if we check for the type of each list element inside the recursion. In that case, we're checking the last element `N` times, the second to last element `N - 1` times, and so on. Overall, we would be doing `N * (N - 1) / 2` checks instead of `N` checks.
+The improvement is more dramatic in a recursion with a list of size `N` if we check for the type of each list element inside the recursion. In that case, we're checking the last element `N` times, the second to last element `N - 1` times, and so on. Overall, we would be doing `N * (N - 1) / 2` checks, which can be a lot more than the required number of only `N` checks.
