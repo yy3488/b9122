@@ -19,12 +19,11 @@ start = time.time()
 
 total = 0
 for item in range(N):
-    total = total + item
+    total += item
 
-print('The sum is: ' + str(total))
 end = time.time()
-print(round(end - start, 3))
-# 1124999250000
+
+print(round(end - start, 3), "seconds")
 # 0.208 seconds
 ```
 
@@ -38,14 +37,10 @@ N = int(1.5e6)
 
 
 start = time.time()
-
-# iterative sum
 total = sum(range(N))
-
-print('The sum is: ' + str(total))
 end = time.time()
-print(round(end - start, 2))
-# The sum is: 1124999250000
+
+print(round(end - start, 3), "seconds")
 # 0.046 seconds
 ```
 
@@ -60,15 +55,11 @@ N = int(1.5e6)
 
 
 start = time.time()
-
-# iterative sum
 total = np.sum(np.arange(N))
-
-print('The sum is: ' + str(total))
 end = time.time()
+
 print(round(end - start, 3), "seconds")
-The sum is: 1124999250000
-0.008 seconds
+# 0.008 seconds
 ```
 
 ## Don't check arguments inside a recursive function
