@@ -51,7 +51,7 @@ def square(num):
     return num ** 2
     
 
-# Classes come next, if any
+# Classes come next, if any.
 class MyClass(object):
     pass
 
@@ -103,3 +103,16 @@ In this case, please submit again and Gradescope will try to grade again.
 ### How do I upload a PDF file?
 
 Click "Submit" or "Resubmit", then just drag-and-drop a PDF file onto the window.
+
+### I got an encoding error, asking me to submit as ASCII or UTF-8. How do I fix it?
+
+A file encoding translates bits (0-1 on the hard drive) into text
+characters. Different countries need different characters: the US does not need accents, so it uses a simple encoding system that uses one byte (8 bits, 256 possible values) into characters: 26 uppercase letters, 26 lowercase letters, and other symbols. It's called ASCII (American Standard Code for Information Interchange).
+
+European countries need accents on vowels ("être" in French, "tchüss" in German), diacritcs on consonants ("niño" in Spanish) and so need considerably more than 256 possible values. The solution was to still use bytes, but to have multiple bytes for a single character (for example, "ê" in French is first the accent "^" and then the letter "e"). It's called Unicode, or UTF-8 (for Unicode Transformation Format – 8-bit). The UTF-8 is the standard in Python: all strings are UTF-8 strings.
+
+This can accommodate most Chinese and Korean characters, but not all. So there is another standard, UTF-16 (for 16 bits) that encodes all possible characters from all possible alphabets, and also encodes emojis.
+
+Gradescope only supports ASCII and UTF-8 files. If you click on "Code" in your submission, you'll see that Autograder cannot display your text files.
+
+Please search online for how to save files in UTF-8 or ASCII. For example, if you use Notepad, search for "how to save notepad file in ASCII". Alternatively, please come to office hours.
