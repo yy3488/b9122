@@ -69,6 +69,28 @@ if __name__ == "__main__":
 
 ### Doc-tests: Your file passes your doc-tests
 
+You should write at least 3 doc-tests for each of your functions, unless the assessment says otherwise. Doc-tests are inside the doc-string (which is the first string after the function name), and are anything that starts with `>>> `. They always follow this pattern: code to execute after `>>> `, and the result expected in the next line. Here is an example that you should copy for your doc-tests:
+
+```
+import doctest
+
+def compute_square(num):
+    """
+    >>> compute_square(2)
+    4
+    >>> compute_square(1.1)
+    1.21
+    >>> compute_square("2")
+    Traceback (most recent call last):
+    ...
+    ValueError: argument must be a number
+    """
+    if not isinstance(num, (int, float)):
+        raise ValueError("argument must be a number")
+        
+    return num ** 2
+```
+
 Make sure that your file passes your doc-tests. For example, for a file called `exercise1.py`, you would run this:
 
 ``` bash
