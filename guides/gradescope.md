@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
 You should write at least 3 doc-tests for each of your functions, unless the assessment says otherwise. Doc-tests are inside the doc-string (which is the first string after the function name), and are anything that starts with `>>> `. They always follow this pattern: code to execute after `>>> `, and the result expected in the next line. Here is an example that you should copy for your doc-tests:
 
-```
+``` python
 import doctest
 
 def compute_square(num):
