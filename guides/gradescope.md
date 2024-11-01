@@ -106,12 +106,14 @@ python -m doctest -v exercise1.py
 Alternatively, you can add this "boilerplate" code at the bottom of your scripts so PyCharm runs your doc-tests:
 
 ``` python
+import doctest
+
 if __name__ == "__main__":
     tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
     if 0 == tests_run:
         print('Unable to run doc-tests, please see Miguel!')
     elif 0 != tests_failed:
-        print('Some doc-tests failed, exiting...')
+        print('Some doc-tests failed')
     else:
         print('Your doc-tests pass, congratulations!')
 ```
