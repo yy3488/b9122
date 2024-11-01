@@ -111,11 +111,11 @@ import doctest
 if __name__ == "__main__":
     tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
     if 0 == tests_run:
-        print('Unable to run doc-tests, please see Miguel!')
+        print("Unable to run doc-tests")
     elif 0 != tests_failed:
-        print('Some doc-tests failed')
+        print("Some doc-tests failed")
     else:
-        print('Your doc-tests pass, congratulations!')
+        print("Your doc-tests pass, congratulations!")
 ```
 
 ## FAQ
