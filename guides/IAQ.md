@@ -33,3 +33,36 @@ In math, the identity matrix uses the single letter "I" and the "spelling name" 
 ### Why is it called "saving to disk"?
 
 Back in the day, hard drives were magnetic disks spinning around. Even though now our storage today is not on disks (we have "solid state drives" and "flash storage"), the expression stayed. The reason is similar to why the "save" icon is a [floppy disk](https://en.wikipedia.org/wiki/Diskette), or "diskette", even though we haven't used them for 20 years.
+
+## Lecture 8, morning
+
+### What's the equivalent of `pbcopy` for Windows?
+
+You can use `clip`, or a custom function from [this thread](https://superuser.com/questions/472598/pbcopy-for-windows) to avoid the carriage return:
+
+``` bash
+function cpy {
+while read data; do     # reads data piped in to cpy
+    echo "$data" | cat > /dev/clipboard     # echos the data and writes that to /dev/clipboard
+done
+tr -d '\n' < /dev/clipboard > /dev/clipboard     # removes new lines from the clipboard
+}
+```
+
+Save this text at the end of the file `$HOME/.bashrc`. You can then call it with `cpy`, for example by piping a command to it: `echo Hello world | cpy`.
+
+### How can I use `more` in Git Bash on Windows?
+
+Please use `less` instead, which works the same way.
+
+### How can I use `man` in Git Bash on Windows?
+
+Git Bash does not support `man` for the manual page, but you can use this instead: `command-name --help`, for example `less --help`.
+
+### How can I produce a sequence with a step in curly brace expansion?
+
+Add a third number in the curly expansion:
+
+``` bash
+echo {0..10..2}  # prints 0 2 4 6 8 10
+```
