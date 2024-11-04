@@ -89,3 +89,44 @@ And her is the same result with a "ternary" operator ("ternary" because it uses 
 b = "positive_or_zero" if a >= 0 else "negative"
 ```
 
+## 80-character limit (assignment 3 onwards)
+
+You now have to keep your lines of code under 80 characters.
+
+Here is an example of a long line, over 80 characters:
+
+``` python
+if np.any(a <= 0):
+    raise ValueError("All elements in the input array must be strictly positive.")
+```
+
+which you can refactor into two shorter lines under 80 characters:
+
+``` python
+if np.any(a <= 0):
+    message = "All elements in the input array must be strictly positive."
+    raise ValueError(message)
+```
+
+Here is another example of a long line in doc-tests, over 80 characters:
+
+``` python
+    >>> compute_variance_of_log_growth(np.array([[33], [21], [4], [81]]).astype(float))
+```
+
+which you can refactor into two shorter lines under 80 characters:
+
+``` python
+    >>> a = np.array([[33], [21], [4], [81]]).astype(float)
+    >>> compute_variance_of_log_growth(a)
+```
+
+If one of your comments is a hyperlink and longer than 80 characters, please
+add ` # noqa: E501` (which stands for "NO Quality Assurance" on this
+style guideline, which has code 501) and it will be graded manually, for example:
+
+```python
+# Inspired by:
+# https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/  # noqa: E501
+```
+
