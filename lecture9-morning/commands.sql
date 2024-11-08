@@ -80,10 +80,10 @@ SELECT countrycode, count(ID) AS num_cities, SUM(Population) AS
 -- JOIN
 
 SELECT city.Name, city.Population, countrycode, country.name
-  FROM city JOIN country ON city.countrycode = country.code LIMIT 2;
+  FROM city LEFT JOIN country ON city.countrycode = country.code LIMIT 2;
 
 -- Exclusive left join
 
 SELECT city.Name, city.Population, countrycode, country.name
-  FROM city JOIN country ON city.countrycode = country.code
+  FROM city LEFT JOIN country ON city.countrycode = country.code
   WHERE countrycode IS NULL;
