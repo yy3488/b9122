@@ -6,4 +6,5 @@ int main() {
  if (i_val == 0 || d_val == 0) {
    printf("The condition matches\n");
   }
+ return 0;
 }

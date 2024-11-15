@@ -3,7 +3,7 @@ import sys
 import urllib.request
 
 
-import bs4
+import bs4  # pip install bs4
 
 
 USER_AGENT_KEY = "User-Agent"
@@ -30,19 +30,23 @@ def clean_and_join_url(url, href):
     """
     >>> clean_and_join_url("http://example.com", "/new_page#someId")
     'http://example.com/new_page'
+    >>> clean_and_join_url("http://example.com", "/new_page?someParam=value")
+    'http://example.com/new_page'
     """
 
-    marker = "#"
-    trim_index = href.find(marker)
-    if -1 != trim_index:
-        href = href[:trim_index]
+
+    for marker in ["#", "?"]:
+        trim_index = href.find(marker)
+        if -1 != trim_index:
+            href = href[:trim_index]
+   
 
     return urllib.parse.urljoin(url, href)
 
 
 def should_visit_url(url, seed_url):
 
-    if not url.startswith("http"):
+    if not url.startswith(seed_url):
         return False
 
     if url.endswith(".pdf"):
@@ -60,7 +64,7 @@ def get_links(url):
     soup = bs4.BeautifulSoup(html, "html.parser")
 
     all_urls = []
-    for tag in soup.select("a"):
+    for tag in soup.find_all("a"):
         href = tag.get("href")
 
         if not href:
@@ -87,11 +91,11 @@ def crawl(seed_url):
         url = queue.pop()
 
         if url in visited:
-            print("  Skipping visited link: " + url)
+            #print("  Skipping visited link: " + url)
             continue
 
         if not should_visit_url(url, seed_url):
-            print("  Skipping link outside of policies: " + url)
+            #print("  Skipping link outside of policies: " + url)
             continue
 
         print("Visited: %d, to visit: %d, visiting: %s" %

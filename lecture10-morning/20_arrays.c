@@ -11,4 +11,5 @@ int main() {
   for (int i = 0; i < 5; i++)  {
     printf("data[%d] = %d\n", i, data[i]);
   }
+  return 0;
 }

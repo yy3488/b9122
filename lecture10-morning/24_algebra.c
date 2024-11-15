@@ -14,4 +14,5 @@ int main() {
   printf("Sum = %f\n",sum);
   average = sum / 3;
   printf("Average = %f\n" , average);
+  return 0;
 }

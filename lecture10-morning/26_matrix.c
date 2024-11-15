@@ -12,4 +12,5 @@ int main() {
       printf("Matrix location [%d,%d] = %d\n", i, j, matrix[i][j]);
     }
   }
+  return 0;
 }

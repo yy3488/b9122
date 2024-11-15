@@ -12,4 +12,5 @@ int main() {
     addtwo(&val);
     printf("val (*in main*) = %d\n", val);
   }
+  return 0;
 }

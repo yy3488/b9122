@@ -11,4 +11,5 @@ int main() {
   // TODO: Complete this
   // swap_ints();
   printf("After running the function: x = %d, y = %d\n", x, y);
+  return 0;
 }

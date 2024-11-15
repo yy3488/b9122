@@ -7,4 +7,5 @@ int main() {
   if (i > 0) {
     printf("i is positive\n");
   }
+  return 0;
 }

@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-  int *pX;
   int X;
+  int *pX;
 
   // Set the value of variable X.
   X = 10;
