@@ -1,0 +1,2 @@
+fredapi
+yfinance=0.2.44

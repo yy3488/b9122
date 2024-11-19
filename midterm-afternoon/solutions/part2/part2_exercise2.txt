@@ -1,0 +1,11 @@
+1. Why do the plots look the way they do?
+
+The data points look concentrated around the mean, but have large outliers.
+
+2. What is the main disadvantage of the linear model with "Ordinary Least Squares" (which is the linear regression we used) in this case? (I am looking for one particularly obvious disadvantage; if you find several disadvantages and none stands out, please list them all.)
+
+Ordinary Least Squares assumes a normal distribution for errors and is very sensitive to outliers. A single outlier observation can change the regression line substantially: in class, we saw how removing one point out of 10 thousand change the regression coefficient around 3%.
+
+3. How can you fix this disadvantage?
+
+Drop outliers, deal with them with "winsorization", or use another model that is less sensitive to outliers, e.g. using a "fat-tail" distribution for errors like a Student's t distribution.
