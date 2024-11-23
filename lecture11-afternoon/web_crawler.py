@@ -30,14 +30,14 @@ def clean_url(url):
     """
     >>> clean_url("http://example.com/new_page#someId")
     'http://example.com/new_page'
-    >>> clean_url("http://example.com/new_page?someParam=someValue")
+    >>> clean_url("http://example.com/new_page?someGetParameter=someValue")
     'http://example.com/new_page'
     """
 
-    marker = "#"
-    trim_index = url.find(marker)
-    if -1 != trim_index:
-        url = url[:trim_index]
+    for marker in ["#", "?"]:
+        trim_index = url.find(marker)
+        if -1 != trim_index:
+            url = url[:trim_index]
 
     return url
 
@@ -55,9 +55,9 @@ def join_url(url, href):
     return urllib.parse.urljoin(url, href)
 
 
-def should_visit_url(url, seed_urls):
+def should_visit_url(url, seed_url):
     
-    if not url.startswith("http"):
+    if not url.startswith(seed_url):
         return False
 
     if url.endswith(".pdf"):
@@ -119,7 +119,7 @@ def crawl(seed_url):
         # set() so we visit the links in the order they were
         # discovered.
         for link in new_links:
-            if link not in queue:
+            if link not in queue and link not in visited:
                 queue.append(link)
 
 
@@ -128,8 +128,8 @@ def main():
     # Default value, in case you run inside PyCharm.
     seed_url = "https://openclimatecurriculum.org"
     args = sys.argv
-    if 1 < len(args):
-        seed_url = args[1]
+    # if 1 < len(args):
+    #     seed_url = args[1]
     
     return crawl(seed_url)
 
@@ -137,4 +137,5 @@ def main():
 if '__main__' == __name__:
     doctests = doctest.testmod(optionflags=doctest.ELLIPSIS)
     assert 0 == doctests.failed, 'Some doc-tests failed, exiting...'
-    main()
+
+main()
