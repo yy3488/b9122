@@ -2,7 +2,27 @@ import doctest
 
 from ex2 import check_value_with_rounding
 
+
+
+
 from compound_interest_solution_DRY import calculate_interest
+
+from compound_interest_solution_DRY import calculate_interest as some_fun
+
+some_fun(balance, rate, transactions)
+
+
+import compound_interest_solution_DRY
+
+# compound_interest_solution_DRY.calculate_interest
+
+
+import compound_interest_solution_DRY as exercise11
+exercise11.calculate_interest
+
+
+
+
 
 def calculate_interest_differential(balance,
                                     baseline_rate,
@@ -80,11 +100,11 @@ else:
 
 # Example usage:
 initial_balance = 1000
-baseline_rate = 0.02
-bonus_rate = 0.04
+baseline_rate = 0.008
+bonus_rate = 0.066
 
 # Transactions: day 5 deposit 500, day 10 withdraw 200, day 20 deposit 100.
-transactions = [(5, 500), (10, -200), (20, 100)]
+transactions = []
 
 interest = calculate_interest_differential(initial_balance,
                                            baseline_rate,

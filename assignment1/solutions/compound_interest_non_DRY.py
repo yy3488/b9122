@@ -5,8 +5,8 @@ from ex2 import check_value_with_rounding
 
 def calculate_interest(balance, rate, transactions):
     """
-    Almost DRY solution from a student.
-    
+    WET / non-DRY solution from a student.
+
     Calculate the compound interest paid monthly on the balance of
     a bank account.
 
@@ -46,25 +46,41 @@ def calculate_interest(balance, rate, transactions):
     >>> interest = calculate_interest(1000, 0.05, [(20, 1000), (20, 1000)])
     >>> check_value_with_rounding(6.69, interest)
     True
-     """
+    """
 
+    # Miguel: I provided these three lines.
     days_in_month = 30
     days_in_year = 365
-
     daily_rate = (1 + rate) ** (1 / days_in_year) - 1
 
+
+    # Miguel: good, descriptive variable names!
     interest = 0
+    days_passed = 0
 
-    for day in range(days_in_month):
-        for i in range(len(transactions)):
-            if transactions[i][0] == day:
-                balance += transactions[i][1]
+    
+    transactions.sort()
 
-        interest += (balance + interest) * daily_rate
+    # Miguel: this conditional contributes to a "christmas tree"
+    # pattern of nested statements.  and is redundant, because a for
+    # loop on an empty list does not run. So the calculation of
+    # interest is WET and not DRY.
+    if len(transactions) > 0:
+        for i in transactions:
+
+            # Miguel: this calculation of interest from individual
+            # cash flows is correct, but hard to read, understand and
+            # debug.
+            interest = interest + ((1 + rate) ** (1 / 365)) ** (i[0] - days_passed) * balance - balance
+            balance = balance + i[1]
+            days_passed = i[0]
+        interest  ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
+    elif len(transactions) == 0:
+
+        # Miguel: this case is WET, repeated from above.
+        interest = ((1 + rate) ** (1 / 365)) ** days_in_month * balance - balance
 
     return interest
-
-
 
 tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
 if 0 < tests_run:
@@ -77,14 +93,3 @@ if 0 < tests_run:
     print("\n".join(msg))
 else:
     print('Unable to run doc-tests, please see Miguel!')
-
-# Example usage:
-initial_balance = 1000
-annual_rate = 0.05
-
-# Transactions: day 5 deposit 500, day 10 withdraw 200, day 20 deposit 100.
-transactions = [(5, 500), (10, -200), (20, 100)]
-
-interest = calculate_interest(initial_balance, annual_rate, transactions)
-
-print(f"Interest to be paid at the end of the month: ${interest:.2f}")

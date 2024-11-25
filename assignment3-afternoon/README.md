@@ -93,7 +93,6 @@ Queens,NY,6789
 ```
 
 Reading and understanding a file in this way is called "parsing."
-The functions below should check for one edge case each: if something other than a string is passed to the first two, and if a missing file is passed to the third.
 
 ### Imperative function
 
@@ -102,6 +101,8 @@ Complete the function `parse_csv_imperative()` in imperative style. It takes as 
 ```
 ["county", "state", "income"]
 ```
+
+This function should check for the edge case where the argument is not a string.
 
 ### Recursive function
 
@@ -120,10 +121,13 @@ Complete the function `parse_csv_recursive()` to handle this case and remove the
 
 Also complete the function `parse_csv_recursive_wrapper()`. It should only check for edge cases, then it should call the recursive function (the "wrapper" function is called so because it wraps around the recursive function).
 
+The wrapper function should check for the edge case where the argument is not a string.
+
 ### Reading from a file
 
 Complete the function `read_csv()` that takes as argument a filepath and returns a list of lists with the contents of the file.
 
 You should check that the filepath exists with `import os` and `os.path.exists()`. If you don't know how to read files, check the Jupyter notebook called `Review` in lecture 6. The function should have no other doc-tests because we can't assume that a file exists on the computer running the system.
 
-The function should call the recursive function. You should ignore empty lines.
+The function should call the recursive function. You should ignore empty lines. This function should also check for the edge case where the filepath in the argument is missing.
+

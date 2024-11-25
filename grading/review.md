@@ -14,11 +14,11 @@ This is the process:
 
 1. I will ask you to write the same code from scratch ("live coding"), so I can make an assessment.
 
-In most cases, I won't have any doubts about your ability to solve the assignemnt and the issue will be cleared in a few days. I will communicate the result by email. This review process will not change my view of you or of your work.
+In most cases, I won't have any doubts about your ability to solve the assignment and the issue will be cleared in a few days. I will communicate the result by email. This review process will not change my view of you or of your work.
 
-In some cases, my assessment may still point to chance of wrongdoing. I will tell you my concerns and we'll have an open conversation and you will have a second opportunity to explain your situation.
+In some cases, my assessment may still point to chance of wrongdoing. I will tell you my concerns, we'll have an open conversation, and you will have a second opportunity to explain your situation.
 
-If you did something wrong (but not terribly wrong), I will offer an arrangement, such as a penalty on your grade or extra work. If you accept, and assuming that my review with the other student with similar code points in the same direction, this arrangement will close the matter. You will receive a confirmation email.
+If you did something wrong (but not terribly wrong), I will offer an arrangement, such as a penalty on your grade. If you accept, and assuming that my review with the other student with similar code points in the same direction, this arrangement will close the matter. You will receive a confirmation email.
 
 If you don't accept, or if I have a strong suspicion of academic dishonesty, I will ask the Office of Student Affairs to conduct an investigation. This procedure is complicated, long, and heavy; therefore, I will only take this route as a last resort. You will have an opportunity to explain your situation to a panel of impartial representatives, who will also presume you are innocent until proven otherwise.
 
