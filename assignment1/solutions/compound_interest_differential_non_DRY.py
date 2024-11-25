@@ -2,6 +2,7 @@ import doctest
 
 from ex2 import check_value_with_rounding
 
+
 def calculate_interest_differential(balance,
                                     baseline_rate,
                                     bonus_rate,
@@ -69,30 +70,11 @@ def calculate_interest_differential(balance,
     return round(interest_compounded, 2)
 
 
-tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
-if 0 < tests_run:
-    assert 0 == tests_failed, 'Some doc-tests failed, exiting...'
-    msg = ["*" * 20,
-           "",
-           "Success! your doc-tests pass!",
-           "",
-           "*" * 20]
-    print("\n".join(msg))
-else:
-    print('Unable to run doc-tests, please see Miguel!')
-
-
-# Example usage:
-initial_balance = 1000
-baseline_rate = 0.02
-bonus_rate = 0.04
-
-# Transactions: day 5 deposit 500, day 10 withdraw 200, day 20 deposit 100.
-transactions = [(5, 500), (10, -200), (20, 100)]
-
-interest = calculate_interest_differential(initial_balance,
-                                           baseline_rate,
-                                           bonus_rate,
-                                           transactions)
-
-print(f"Interest to be paid at the end of the month: ${interest:.2f}")
+if __name__ == "__main__":
+    tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
+    if 0 == tests_run:
+        print("Unable to run doc-tests")
+    elif 0 != tests_failed:
+        print("Some doc-tests failed")
+    else:
+        print("Your doc-tests pass, congratulations!")

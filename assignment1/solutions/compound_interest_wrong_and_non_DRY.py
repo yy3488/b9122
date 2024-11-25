@@ -57,8 +57,7 @@ def calculate_interest(balance, rate, transactions):
     # Miguel: good, descriptive variable names!
     interest = 0
     days_passed = 0
-
-    
+   
     transactions.sort()
 
     # Miguel: this conditional contributes to a "christmas tree"
@@ -70,11 +69,11 @@ def calculate_interest(balance, rate, transactions):
 
             # Miguel: this calculation of interest from individual
             # cash flows is correct, but hard to read, understand and
-            # debug.
+            # debug, so much that the doc-tests do not pass.
             interest = interest + ((1 + rate) ** (1 / 365)) ** (i[0] - days_passed) * balance - balance
             balance = balance + i[1]
             days_passed = i[0]
-        interest  ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
+        interest = ((1 + rate) ** (1 / 365)) ** (days_in_month - days_passed) * balance - balance
     elif len(transactions) == 0:
 
         # Miguel: this case is WET, repeated from above.
@@ -82,14 +81,11 @@ def calculate_interest(balance, rate, transactions):
 
     return interest
 
-tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
-if 0 < tests_run:
-    assert 0 == tests_failed, 'Some doc-tests failed, exiting...'
-    msg = ["*" * 20,
-           "",
-           "Success! your doc-tests pass!",
-           "",
-           "*" * 20]
-    print("\n".join(msg))
-else:
-    print('Unable to run doc-tests, please see Miguel!')
+if __name__ == "__main__":
+    tests_failed, tests_run = doctest.testmod(optionflags=doctest.ELLIPSIS)
+    if 0 == tests_run:
+        print("Unable to run doc-tests")
+    elif 0 != tests_failed:
+        print("Some doc-tests failed")
+    else:
+        print("Your doc-tests pass, congratulations!")
