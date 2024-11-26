@@ -129,4 +129,3 @@ style guideline, which has code 501) and it will be graded manually, for example
 # Inspired by:
 # https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/  # noqa: E501
 ```
-

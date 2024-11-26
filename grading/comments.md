@@ -58,6 +58,12 @@ for key in dictionary:
    ...
 ```
 
+Here is another comment that you should avoid:
+
+``` python
+some_function(arg)  # Call some_function here
+```
+
 ### renaming variables to avoid comments
 
 Consider renaming your variables to make them more explanatory
@@ -82,4 +88,18 @@ def rectifier(some_list):
         if n > largest_so_far:
             largest_so_far = n
     return largest_so_far
+```
+
+## Allowed comments
+
+If you attribute credit to a piece of code, or acknowledge the help of generative AI, that line will not count as a comment. For example, Autograder will ignore these comments:
+
+``` python
+# Code snippet from https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/
+
+# GenAI helped me with this.
+
+# I asked chatGPT for help with the zip function.
+
+# Generative AI explained me the bubble sort algorithm.
 ```

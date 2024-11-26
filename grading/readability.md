@@ -101,6 +101,34 @@ def calculate_interest(balance, rate, transactions):
         days_passed = day
 ```
 
+## Standards for assignment 3 onwards
+
+### Refactor functions from wide / horizontal to long / vertical
+
+Consider this function that returns whether a year is a leap year:
+
+``` python
+def is_leap_year(year):
+    return (year % 4) and not ((year % 100) and not (year % 400))
+```
+
+The body of the function is wide with 65 characters and hard to read: should it be `and` or `or`? Are parentheses in the right place? Is it correctly using the conversion of integers to booleans?
+Because it's hard to read, it's also hard to find the bug.
+
+Instead, from assignment 3 onwards, I want you to write functions that are long / vertical and use early returns:
+
+``` python
+def is_leap_year(year):
+
+    if year % 400 == 0:
+        return True
+        
+    if year % 100 == 0:
+        return False
+        
+    return year % 4 == 0
+```
+
 ## Goal
 
 Here is quote from Hoare:
@@ -109,6 +137,6 @@ Here is quote from Hoare:
 
 Our goal for this course is for you to write the former.
 
-Here is the standard we will apply for assignment 5 and the final, quoted from the syllabus
+Here is the standard we will apply for assignment 5 and the final, quoted from the syllabus:
 
 > The code is easy to read and understand; variable, function and object names are appropriate and convey meaning; functions are clear in what they do; they follow the “happy path”. The code is so clear in what it does that there are obviously no bugs. 
