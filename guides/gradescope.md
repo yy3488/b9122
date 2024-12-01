@@ -118,6 +118,16 @@ if __name__ == "__main__":
         print("Your doc-tests pass, congratulations!")
 ```
 
+## Comments from TAs
+
+Sometimes the TA's add specific comments to help you improve. On Gradescope, click on your submission, then on "code" at the top right, and you'll see a "speech bubble" with comments the TA left for you, as in this picture:
+
+![](../images/TA-comments1.png)
+
+If you click on the exercise and scroll down, you'll see the comment that the TA left for you:
+
+![](../images/TA-comments2.png)
+
 ## FAQ
 
 ### How to create an account
