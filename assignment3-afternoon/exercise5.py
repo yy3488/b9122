@@ -1,13 +1,19 @@
+import os
 DELIMITER = ","
 
 
 def parse_csv_imperative(s):
     """
-    # TODO: add doc-tests.
+    >>> parse_csv_imperative("county,state,income")
+    ["county", "state", "income"]
+    >>> parse_csv_imperative("Kings,NY,1234")
+    ["Kings", "NY", "1234"]
     """
-
-    # TODO: complete this function.
-    return None
+    if not isinstance(s, str):
+        raise ValueError("Input must be a string.")
+    if s.strip() == "":
+        return []
+    return s.strip().split(DELIMITER)
 
 
 def parse_csv_recursive(s):
