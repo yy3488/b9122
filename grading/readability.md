@@ -129,6 +129,34 @@ def is_leap_year(year):
     return year % 4 == 0
 ```
 
+### Align the "happy path" to the left edge / line of sight
+
+Here is an example submission from Assignment 3. The happy path is nested in one other level of indentation and is hard to read:
+
+``` python
+def convert_to_title_case(string):
+
+    if isinstance(string, str):
+        list_of_words = string.split(" ")
+        title_words = []
+        
+        # other code
+    else:
+        raise TypeError("The Input argument should be a String.")
+```
+
+A more readable code flips the logic and deals with the edge case first. Then, the "happy path", i.e. the path taken by the most common case, is at one level of indentation (the left edge) instead of two levels, which makes it more readable:
+
+``` python
+def convert_to_title_case(string):
+
+    if not isinstance(string, str):
+        raise TypeError("The Input argument should be a String.")
+        
+    list_of_words = string.split(" ")
+    title_words = []
+```
+
 ## Goal
 
 Here is quote from Hoare:
@@ -139,4 +167,4 @@ Our goal for this course is for you to write the former.
 
 Here is the standard we will apply for assignment 5 and the final, quoted from the syllabus:
 
-> The code is easy to read and understand; variable, function and object names are appropriate and convey meaning; functions are clear in what they do; they follow the “happy path”. The code is so clear in what it does that there are obviously no bugs. 
+> The code is easy to read and understand; variable, function and object names are appropriate and convey meaning; functions are clear in what they do; they follow the "happy path". The code is so clear in what it does that there are obviously no bugs. 
