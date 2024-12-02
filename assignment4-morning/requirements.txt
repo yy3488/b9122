@@ -1,0 +1,5 @@
+numpy
+pandas
+pyarrow
+scikit-learn
+yfinance==0.2.44
