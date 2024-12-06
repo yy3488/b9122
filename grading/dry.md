@@ -184,3 +184,53 @@ def calculate_interest_differential(balance,
 
     return calculate_interest(balance, rate, transactions)
 ```
+## example from assignment 4 (morning)
+
+In assigment 4, you had to program a function to determine whether a string was valid. This code is not DRY because if we want to add `()` as a valid string, we have to add them in three places:
+
+```
+def is_valid(s):
+    """
+    >>> is_valid("{}[]{}")
+    True
+    """
+
+    stack = []
+    matching_bracket = {']': '[', '}': '{'}
+
+    for char in s:
+        if char in '[{':  # <- not DRY
+            stack.append(char)
+        elif char in ']}':  # <- not DRY
+            if not stack or stack.pop() != matching_bracket[char]:
+                return False
+        else:
+            return False
+
+    return not stack
+```
+
+instead, this code is DRY:
+
+```
+def is_valid(s):
+    """
+    >>> is_valid("{}[]{}")
+    True
+    """
+
+    stack = []
+    matching_bracket = {']': '[', '}': '{'}
+
+    for char in s:
+        if char in matching_brackets.values():  # <- changed here
+            stack.append(char)
+        elif char in matching_brackets.kesy():  # <- changed here
+            if not stack or stack.pop() != matching_bracket[char]:
+                return False
+        else:
+            return False
+
+    return not stack
+```
+
